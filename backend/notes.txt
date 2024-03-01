@@ -1,0 +1,155 @@
+### Tables:
+
+1. **Users**
+   - id (Primary Key)
+   - firstName
+   - lastName
+   - email (Unique)
+   - username (Unique)
+   - password (hashed)
+   - createdAt
+   - updatedAt
+
+2. **Spots**
+   - id (Primary Key)
+   - ownerId (Foreign Key from Users)
+   - address
+   - city
+   - state
+   - country
+   - lat (Latitude)
+   - lng (Longitude)
+   - name
+   - description
+   - price
+   - createdAt
+   - updatedAt
+   - avgRating (Calculated field, not directly stored)
+   - previewImage (URL, might be linked to the SpotImages table)
+
+3. **SpotImages**
+   - id (Primary Key)
+   - spotId (Foreign Key from Spots)
+   - url
+   - preview (Boolean)
+   - createdAt
+   - updatedAt
+
+4. **Reviews**
+   - id (Primary Key)
+   - userId (Foreign Key from Users)
+   - spotId (Foreign Key from Spots)
+   - review (Text)
+   - stars
+   - createdAt
+   - updatedAt
+
+5. **ReviewImages**
+   - id (Primary Key)
+   - reviewId (Foreign Key from Reviews)
+   - url
+   - createdAt
+   - updatedAt
+
+6. **Bookings**
+   - id (Primary Key)
+   - spotId (Foreign Key from Spots)
+   - userId (Foreign Key from Users)
+   - startDate
+   - endDate
+   - createdAt
+   - updatedAt
+
+### Relationships:
+
+- **Users** have multiple **Spots** (`one-to-many`): A user can own many spots, but a spot is owned by one user.
+- **Spots** have multiple **SpotImages** (`one-to-many`): A spot can have many images, but an image belongs to one spot.
+- **Spots** have multiple **Reviews** (`one-to-many`): A spot can have many reviews, but a review is about one spot.
+- **Reviews** have multiple **ReviewImages** (`one-to-many`): A review can have many images, but an image belongs to one review.
+- **Users** have multiple **Reviews** (`one-to-many`): A user can write many reviews, but a review is written by one user.
+- **Users** have multiple **Bookings** (`one-to-many`): A user can have many bookings, but a booking is made by one user.
+- **Spots** have multiple **Bookings** (`one-to-many`): A spot can have many bookings, but a booking is for one spot.
+
+
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+// Users table stores all user information
+Table users {
+  id integer [pk]
+  firstName varchar
+  lastName varchar
+  email varchar [unique]
+  username varchar [unique]
+  password varchar // Stored as a hashed value for security
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+// Spots table stores listings available on NomadNook
+Table spots {
+  id integer [pk]
+  ownerId integer [ref: > users.id] // Reference to the user who owns the spot
+  address varchar
+  city varchar
+  state varchar
+  country varchar
+  lat decimal // Latitude for location-based services
+  lng decimal // Longitude for location-based services
+  name varchar
+  description varchar
+  price decimal // Price per night
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+// SpotImages table stores images associated with spots
+Table spotImages {
+  id integer [pk]
+  spotId integer [ref: > spots.id] // Reference to the associated spot
+  url varchar // URL to the image
+  preview boolean // Indicates if the image is a preview image
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+// Reviews table stores user reviews for spots
+Table reviews {
+  id integer [pk]
+  userId integer [ref: > users.id] // The user who wrote the review
+  spotId integer [ref: > spots.id] // The spot the review is for
+  review text // Review content
+  stars integer // Rating given by the user
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+// ReviewImages table stores images associated with reviews
+Table reviewImages {
+  id integer [pk]
+  reviewId integer [ref: > reviews.id] // Reference to the associated review
+  url varchar // URL to the image
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+// Bookings table stores booking information for spots
+Table bookings {
+  id integer [pk]
+  spotId integer [ref: > spots.id] // The spot being booked
+  userId integer [ref: > users.id] // The user who made the booking
+  startDate date // Start date of the booking
+  endDate date // End date of the booking
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+
+// Relationships
+Ref: spots.ownerId > users.id // A user can own many spots
+Ref: spotImages.spotId > spots.id // A spot can have many images
+Ref: reviews.spotId > spots.id // A spot can have many reviews
+Ref: reviewImages.reviewId > reviews.id // A review can have many images
+Ref: bookings.spotId > spots.id // A spot can have many bookings
+Ref: bookings.userId > users.id // A user can make many bookings
+Ref: reviews.userId > users.id // A user can write many reviews

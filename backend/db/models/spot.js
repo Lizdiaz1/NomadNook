@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       spot.hasMany(
-        models.Bookings, {
+        models.booking, {
         foreignKey: 'spotId',
         onDelete: 'CASCADE',
         hooks: true
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       )
 
       spot.hasMany(
-        models.Reviews, {
+        models.review, {
         foreignKey: 'spotId',
         onDelete: 'CASCADE',
         hooks: true
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       )
 
       spot.hasMany(
-        models.SpotImages, {
+        models.spotImage, {
         foreignKey: 'spotId',
         as: 'previewImage',
         onDelete: 'CASCADE',
@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       )
 
       spot.belongsTo(
-        models.User, {
+        models.user, {
         foreignKey: 'ownerId',
         as: 'Owner',
       }

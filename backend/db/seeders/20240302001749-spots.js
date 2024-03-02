@@ -8,11 +8,12 @@ if (process.env.NODE_ENV === "production") {
 }
 
 module.exports = {
-	async up(queryInterface, Sequelize) {
-		options.tableName = "Spots";
-		return queryInterface.bulkInsert(options
-			[
-				{
+  async up(queryInterface, Sequelize) {
+    // Define the table name directly in the bulkInsert call
+    // Pass the options object if you're in production and need to specify the schema
+    const tableName = "Spots";
+    const records = [
+      {
 					ownerId: 1,
 					address: "720 Chalet Lane ",
 					city: "Zermatt",
@@ -69,19 +70,21 @@ module.exports = {
 					//updatedAt: new Date() testing the errors
 				}
 			]
-
-		);
 	},
 
-	async down(queryInterface, Sequelize) {
-		options.tableName = "Spots";
-		const Op = Sequelize.Op;
-		return queryInterface.bulkDelete(
-			options,
-			{
-				name: { [Op.in]: ["Disney Land",
-				"Cove Point Lighthouse Keeper's House",
-				"The Wardrobe", "Luxurious Swiss Chalet"] }
-			}, 	{});
-	}
+
+async down(queryInterface, Sequelize) {
+  options.tableName = "Spots";
+  const Op = Sequelize.Op;
+  return queryInterface.bulkDelete(options, {
+    name: {
+      [Op.in]: [
+        "Disney Land",
+        "Cove Point Lighthouse Keeper's House",
+        "The Wardrobe",
+        "Luxurious Swiss Chalet",
+      ],
+    },
+  });
+},
 };

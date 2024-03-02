@@ -6,7 +6,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = {
-  up:(queryInterface, Sequelize) => {
+  up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Bookings', {
       id: {
         allowNull: false,
@@ -16,11 +16,27 @@ module.exports = {
       },
       userId: {
         type: Sequelize.INTEGER,
-        references: { model: 'Users' }
+        references: {
+          model: {
+            tableName: 'Users', // Ensure this matches the actual table name
+            schema: options.schema // Include schema if applicable
+          },
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL' // or 'CASCADE' depending on your application logic
       },
       spotId: {
         type: Sequelize.INTEGER,
-        references: { model: 'Spots' }
+        references: {
+          model: {
+            tableName: 'Spots', // Ensure this matches the actual table name
+            schema: options.schema // Include schema if applicable
+          },
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL' // or 'CASCADE' depending on your application logic
       },
       startDate: {
         type: Sequelize.DATE,

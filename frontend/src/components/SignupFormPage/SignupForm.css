@@ -26,41 +26,34 @@
     100% {
       background-position: 0% 50%;
     }
-  }
+}
 
-  .profileForm {
+.profileForm {
     display: flex;
     flex-direction: column;
     font-size: large;
     align-items: center;
     justify-content: center;
+    /* width: fit-content; */
 
   }
 
-  .fields {
+.fields {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 5px;
-  }
+}
 
-  .input {
+.input {
     font-size: 20px;
     display: flex;
     border: 3px black solid;
-  }
-  .input:hover{
+}
+.input:hover{
     box-shadow: 3px 3px 3px black
-  }
+}
 
-  .demo {
-    color: red;
-    border-bottom: 3px rgb(147, 60, 60) solid;
-    margin-bottom: 5px;
-  }
-
-  .demo:hover {
-    color: rgb(169, 65, 248);
-    border-bottom: 3px rgb(136, 9, 247) solid;
-    cursor: pointer;
-  }
+.button {
+    margin-bottom: 3px;
+}

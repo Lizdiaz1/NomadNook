@@ -5,60 +5,47 @@ if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
 }
 
+/** @type {import('sequelize-cli').Migration} */
+
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Bookings', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      userId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: 'Users', // Ensure this matches the actual table name
-            schema: options.schema // Include schema if applicable
-          },
-          key: 'id'
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable(
+      "Bookings",
+      {
+        id: {
+          allowNull: false,
+          autoIncrement: true,
+          primaryKey: true,
+          type: Sequelize.INTEGER,
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL' // or 'CASCADE' depending on your application logic
-      },
-      spotId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: 'Spots', // Ensure this matches the actual table name
-            schema: options.schema // Include schema if applicable
-          },
-          key: 'id'
+        spotId: {
+          type: Sequelize.INTEGER,
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL' // or 'CASCADE' depending on your application logic
+        userId: {
+          type: Sequelize.INTEGER,
+        },
+        startDate: {
+          type: Sequelize.DATE,
+        },
+        endDate: {
+          type: Sequelize.DATE,
+        },
+        createdAt: {
+          allowNull: false,
+          type: Sequelize.DATE,
+          defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+        },
+        updatedAt: {
+          allowNull: false,
+          type: Sequelize.DATE,
+          defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+        },
       },
-      startDate: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      endDate: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-      }
-    }, options);
+      options
+    );
   },
-  down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Bookings', options);
-  }
+  async down(queryInterface, Sequelize) {
+    options.tableName = "Bookings";
+    return queryInterface.dropTable(options);
+  },
 };

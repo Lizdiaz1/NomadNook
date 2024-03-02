@@ -8,8 +8,8 @@ if (process.env.NODE_ENV === 'production') {
 /** @type {import('sequelize-cli').Migration} */
 
 module.exports = {
-  up:(queryInterface, Sequelize) => {
-    return queryInterface.createTable('SpotImages', {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('SpotImages', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -41,7 +41,8 @@ module.exports = {
       }
     }, options);
   },
-  down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('SpotImages', options);
+  async down(queryInterface, Sequelize) {
+    options.tableName = "SpotImages";
+    return queryInterface.dropTable(options);
   }
 };

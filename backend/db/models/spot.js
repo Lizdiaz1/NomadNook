@@ -108,7 +108,7 @@ module.exports = (sequelize, DataTypes) => {
           exclude: ["createdAt", "updatedAt"]
         }
       }
-    
+
     }
   );
   return Spots;

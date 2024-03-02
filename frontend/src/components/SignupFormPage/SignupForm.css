@@ -1,59 +1,15 @@
-#form-content {
-    border-radius: 15px;
-    background: linear-gradient(
-      -45deg,
-      #242038,
-      #725ac1,
-      rgba(178, 153, 235, 0.87),
-      #cac4ce,
-      #242038
-    );
-    background-size: 200%;
-    animation: gradient 10s ease infinite;
-    height: auto;
-    border: 2px solid gold;
-    border-radius: 15px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.695);
-    width: 25%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  @keyframes gradient {
-    0% {
-      background-position: 0%, 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-}
 
-.profileForm {
+  .background {
+    /* Full screen */
+    height: 100vh;
+    width: 100vw;
     display: flex;
-    flex-direction: column;
-    font-size: large;
     align-items: center;
     justify-content: center;
-    /* width: fit-content; */
-
   }
-
-.fields {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 5px;
-}
-
-.input {
-    font-size: 20px;
-    display: flex;
-    border: 3px black solid;
-}
-.input:hover{
-    box-shadow: 3px 3px 3px black
-}
-
-.button {
-    margin-bottom: 3px;
-}
+  

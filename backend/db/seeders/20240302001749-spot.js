@@ -11,7 +11,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     // Define the table name directly in the bulkInsert call
     // Pass the options object if you're in production and need to specify the schema
-    const tableName = "Spots";
+    const tableName = "spot";
     const records = [
       {
 					ownerId: 1,
@@ -74,7 +74,7 @@ module.exports = {
 
 
 async down(queryInterface, Sequelize) {
-  options.tableName = "Spots";
+  options.tableName = "spot";
   const Op = Sequelize.Op;
   return queryInterface.bulkDelete(options, {
     name: {

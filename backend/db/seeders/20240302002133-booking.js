@@ -1,6 +1,6 @@
 "use strict";
 
-const { Booking } = require("../models");
+const { booking } = require("../models");
 const bcrypt = require("bcryptjs");
 
 let options = {};
@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === "production") {
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
 	async up(queryInterface, Sequelize) {
-    options.tableName = "Bookings";
+    options.tableName = "booking";
 		return queryInterface.bulkInsert(options,
 			[
 				{
@@ -41,7 +41,7 @@ module.exports = {
 	},
 
 	async down(queryInterface, Sequelize) {
-		options.tableName = "Bookings";
+		options.tableName = "booking";
 		const Op = Sequelize.Op;
 		return queryInterface.bulkDelete(options, {
 			spotId: { [Op.in]: [1, 2, 3, 4] },

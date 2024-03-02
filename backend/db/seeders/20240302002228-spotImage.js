@@ -5,11 +5,11 @@ if (process.env.NODE_ENV === "production") {
 	options.schema = process.env.SCHEMA; // define your schema in options object
 }
 
-const { SpotImage, sequelize } = require("../models");
+const { spotImage, sequelize } = require("../models");
 
 module.exports = {
 	async up(queryInterface, Sequelize) {
-		options.tableName = "SpotImages";
+		options.tableName = "spotImage";
 		return queryInterface.bulkInsert(options, [
 			{
 				url: "https://tjbprivatetravel.com/wp-content/uploads/2022/05/chalet-evening-lit-up-looking-towards-tasch-1-scaled.jpg",
@@ -100,7 +100,7 @@ module.exports = {
 	},
 
 	async down(queryInterface, Sequelize) {
-		options.tableName = "SpotImages";
+		options.tableName = "spotImage";
 		const Op = sequelize.Op;
 		return queryInterface.bulkDelete(
 			options,

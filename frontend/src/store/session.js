@@ -1,4 +1,3 @@
-
 import { csrfFetch } from './csrf';
 
 // Action Types
@@ -6,7 +5,7 @@ const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
 
 // Action Creators
-export const setUser = (user) => ({
+const setUser = (user) => ({
   type: SET_USER,
   payload: user,
 });
@@ -29,6 +28,15 @@ export const login = (user) => async (dispatch) => {
     return data.user;
   }
 };
+
+export const restoreUser = () => async (dispatch) => {
+    const response = await csrfFetch("/api/session");
+    const data = await response.json();
+    if (response.ok) {
+      dispatch(setUser(data.user));
+    }
+    return response;
+  };
 
 // Initial State
 const initialState = { user: null };

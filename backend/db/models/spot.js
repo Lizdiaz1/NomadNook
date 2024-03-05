@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
         otherKey: "userId",
       });
       Spot.hasMany(models.Image, {
-        foreignKey: "imageableId",
+        foreignKey: "spotId",
         constraints: false,
         scope: {
-          imageableType: "Spot",
+          Type: "Spot",
         },
       });
       Spot.hasMany(models.Review, {

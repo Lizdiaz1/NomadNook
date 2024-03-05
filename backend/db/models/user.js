@@ -1,4 +1,5 @@
 'use strict';
+
 const { Model, Validator } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
@@ -22,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: "CASCADE",
       });
     }
-  };
+  }
   user.init(
     {
       firstName: {

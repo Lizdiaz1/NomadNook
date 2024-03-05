@@ -1,7 +1,7 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class spot extends Model {
     /**
@@ -16,16 +16,14 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'spotId',
         onDelete: 'CASCADE',
         hooks: true
-      }
-      )
+      })
 
       spot.hasMany(
         models.review, {
         foreignKey: 'spotId',
         onDelete: 'CASCADE',
         hooks: true
-      }
-      )
+      })
 
       spot.hasMany(
         models.spotImage, {
@@ -33,15 +31,13 @@ module.exports = (sequelize, DataTypes) => {
         as: 'previewImage',
         onDelete: 'CASCADE',
         hooks: true
-      }
-      )
+      })
 
       spot.belongsTo(
         models.user, {
         foreignKey: 'ownerId',
         as: 'Owner',
-      }
-      )
+      })
     }
   }
   spot.init({

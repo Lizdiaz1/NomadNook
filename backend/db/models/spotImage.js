@@ -1,4 +1,5 @@
 'use strict';
+
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
@@ -13,8 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       spotImage.belongsTo(
         models.spot, {
         foreignKey: 'spotId',
-      }
-      )
+      })
     }
   }
   spotImage.init({

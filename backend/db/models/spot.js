@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       })
 
       spot.hasMany(
-        models.spotImage, {
+        models.image, {
         foreignKey: 'spotId',
         as: 'previewImage',
         onDelete: 'CASCADE',
@@ -104,12 +104,6 @@ module.exports = (sequelize, DataTypes) => {
   },
       sequelize,
       modelName: 'spot',
-      defaultScope: {
-        attributes: {
-          exclude: ["createdAt", "updatedAt"]
-        }
-      }
-
     }
   );
   return spot;

@@ -2,6 +2,7 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import './Navigation.css';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -20,7 +21,7 @@ function Navigation() {
 
   return (
     <nav>
-      <NavLink exact to="/">Home</NavLink>
+      <NavLink to="/">Home</NavLink>
       {sessionLinks}
     </nav>
   );

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
 import * as sessionActions from './store/session';
+import Navigation from './components/Navigation/Navigation';
 
 
 function Layout() {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       { path: '/', element: <h1>Welcome!</h1> }, // Home route
       { path: '/login', element: <LoginFormPage /> }, // Login route
       { path: '/signup', element: <SignupFormPage />,}, //Signup route
+      { path: '/logout', element: <Navigation />,}, //Logout route
     ],
   },
 ]);

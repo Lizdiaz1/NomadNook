@@ -15,55 +15,73 @@ module.exports = {
           spotId: 1,
           Type: 'Spot',
           preview: true,
-          url: "https://i.pinimg.com/564x/d5/4d/5e/d54d5e6bf5beca90f058d1a512fa27df.jpg"
+          url: "https://tjbprivatetravel.com/wp-content/uploads/2022/05/chalet-evening-lit-up-looking-towards-tasch-1-scaled.jpg",
+        },
+        {
+          spotId: 1,
+          Type: 'Spot',
+          preview: false,
+          url: "https://ariajourneys.com/wp-content/uploads/2017/01/luxury_ski_holidays_Zermatt_120.jpg",
+        },
+        {
+          spotId: 1,
+          Type: 'Spot',
+          preview: false,
+        url: "https://www.chaletzermattpeak.com/media/45257/1-welcome-drinks-winter.jpg",
+        },
+        {
+          spotId: 1,
+          Type: 'Spot',
+          preview: false,
+          url: "https://i.insider.com/4eb822ed6bb3f76e0300000a?width=750&format=jpeg&auto=webp",
         },
         {
           spotId: 2,
           Type: 'Spot',
           preview: true,
-          url: 'https://media-cdn.tripadvisor.com/media/photo-s/11/84/36/46/desert-tent.jpg'
+          url: "https://static.wikia.nocookie.net/narnia/images/6/6e/Wardrobe.jpg",
         },
         {
           spotId: 3,
           Type: 'Spot',
           preview: true,
-          url: "https://na.rdcpix.com/1821951854/b57cb3fe060b4e365f4756e99b2b4287w-c249155rd-w832_h468_r4_q80.jpg"
+          url: "https://a0.muscache.com/im/pictures/9f6f2463-2b25-492c-b9aa-f2ee4a508c6a.jpg?im_w=720",
         },
         {
           spotId: 4,
           Type: 'Spot',
           preview: true,
-          url: "https://eb2pgoq5kpf.exactdn.com/wp-content/uploads/2015/04/HoneyWereHomeMasterBedroom.134.jpg?strip=all&lossy=1&ssl=1"
+          url: "https://ktla.com/wp-content/uploads/sites/4/2023/01/Disney-100-castle.jpg?strip=1",
         },
-        {
-          spotId: 5,
-          Type: 'Spot',
-          preview: true,
-          url: "https://png.pngtree.com/thumb_back/fw800/background/20230722/pngtree-opulent-purple-bedroom-featuring-lavish-furnishings-ornate-golden-patterns-a-spacious-image_3784783.jpg"
-        },
+        // {
+        //   spotId: ,
+        //   Type: 'Spot',
+        //   preview: true,
+        //   url:
+        // },
         {
           spotId: 1,
           Type: 'Review',
           preview: true,
-          url: "https://media.tenor.com/MFE6UiMEpRoAAAAC/math-zack-galifianakis.gif"
+          url: "https://i.insider.com/4eb822ed6bb3f76e0300000a?width=750&format=jpeg&auto=webp",
         },
         {
           spotId: 2,
           Type: 'Review',
           preview: true,
-          url: "https://media.tenor.com/MFE6UiMEpRoAAAAC/math-zack-galifianakis.gif"
+          url: "https://www.narniaweb.com/wp-content/uploads/2020/11/pevensies-return-screenshot-1024x576.jpg",
         },
         {
           spotId: 3,
           Type: 'Review',
           preview: true,
-          url: "https://media.tenor.com/MFE6UiMEpRoAAAAC/math-zack-galifianakis.gif"
+          url: "https://i.pinimg.com/originals/9a/fb/12/9afb12c20cf4cb2ccf6a01ef9aec2fec.jpg",
         },
         {
           spotId: 4,
           Type: 'Review',
           preview: true,
-          url: "https://media.tenor.com/MFE6UiMEpRoAAAAC/math-zack-galifianakis.gif"
+          url: "https://pbs.twimg.com/media/E2LgbsUWYAs7Byo.jpg",
         },
       ],
       { validate: true }

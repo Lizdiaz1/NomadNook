@@ -5,10 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       SpotImage.belongsTo(models.Spot, {
         foreignKey: "spotId",
+        as: 'Spot',
         constraints: false,
       });
       SpotImage.belongsTo(models.Review, {
-        foreignKey: "spotId",
+        foreignKey: "reviewId",
+        as: 'Review',
         constraints: false,
       });
     }
@@ -16,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   SpotImage.init(
     {
       spotId: DataTypes.INTEGER,
+      reviewId: DataTypes.INTEGER, 
       Type: DataTypes.STRING,
       preview: DataTypes.BOOLEAN,
       url: DataTypes.STRING,

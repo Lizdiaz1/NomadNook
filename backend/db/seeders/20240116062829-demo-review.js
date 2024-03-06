@@ -15,7 +15,7 @@ module.exports = {
           {
             spotId: 1,
             userId: 2,
-            review: "I thought the bedroom was fancy, but the bathroom? Let's just say, nothing beats gold on gold, iykyk!",
+            review: "this place is great :)",
             stars: 5,
           },
           {

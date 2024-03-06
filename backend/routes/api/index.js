@@ -7,7 +7,7 @@ const spotsRouter = require('./spots.js')
 const reviewsRouter = require('./reviews.js')
 const bookingRouter = require('./bookings.js')
 const spotImagesRouter = require('./spotimages.js')
-const reviewImagesRouter = require('./reviewImages.js')
+const reviewImagesRouter = require('./reviewimages.js')
 
 router.get('/set-token-cookie', async (_req, res) => {
     const user = await User.findOne({

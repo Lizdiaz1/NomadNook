@@ -80,13 +80,9 @@ module.exports = {
     return queryInterface.bulkDelete(
       options,
       {
-        name: {
-          [Op.in]: [
-            "Fake-Spot",
-            "Unknown-Joint",
-            "Hot-Fake-Spot",
-            "Some Void Place",
-          ],
+        name: { [Op.in]: ["Disney Land",
+				"Cove Point Lighthouse Keeper's House",
+				"The Wardrobe", "Luxurious Swiss Chalet"]
         },
       },
       {}

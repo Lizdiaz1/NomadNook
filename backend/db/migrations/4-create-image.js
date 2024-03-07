@@ -15,10 +15,13 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER,
         },
-        imageableId: {
+        spotId: {
           type: Sequelize.INTEGER,
+          references: { model: 'Spots' },
+          onUpdate: 'CASCADE',
+          onDelete: 'SET NULL'
         },
-        imageableType: {
+        Type: {
           type: Sequelize.STRING,
         },
         preview: {

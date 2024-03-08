@@ -7,10 +7,10 @@ if (process.env.NODE_ENV === "production") {
 
 const { SpotImage, sequelize } = require("../models");
 
+
 module.exports = {
-	async up(queryInterface, Sequelize) {
-		options.tableName = "SpotImages";
-		return queryInterface.bulkInsert(options, [
+  async up(queryInterface, Sequelize) {
+    await queryInterface.bulkInsert('SpotImages', [
 			{
 				url: "https://tjbprivatetravel.com/wp-content/uploads/2022/05/chalet-evening-lit-up-looking-towards-tasch-1-scaled.jpg",
 				spotId: 1,
@@ -134,10 +134,6 @@ module.exports = {
 	},
 
 	async down(queryInterface, Sequelize) {
-		const Op = Sequelize.Op;
-		await queryInterface.bulkDelete('SpotImages', {
-			spotId: { [Op.in]: [1, 2, 3, 4] }
-			}
-		);
-	},
+		await queryInterface.bulkDelete('SpotImages', null, {});
+	  }
 };

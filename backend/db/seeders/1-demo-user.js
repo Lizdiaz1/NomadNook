@@ -10,9 +10,7 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await User.bulkCreate(
-      // options,
-      [
+    return queryInterface.bulkInsert('Users', [
         {
           firstName: "Demo",
           lastName: "Lition",

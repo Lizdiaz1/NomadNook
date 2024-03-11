@@ -1,4 +1,5 @@
 "use strict";
+
 const { Booking } = require("../models");
 
 let options = {};

@@ -4,7 +4,6 @@ import { Navigate } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './LoginForm.css';
 
-
 function LoginFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
@@ -12,7 +11,6 @@ function LoginFormPage() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
 
-  // Redirect if user is logged in
   if (sessionUser) return <Navigate to="/" replace={true} />;
 
   const handleSubmit = async (e) => {
@@ -24,6 +22,13 @@ function LoginFormPage() {
       const data = await res.json();
       if (data && data.errors) setErrors(data.errors);
     }
+  };
+
+  const handleDemoLogin = async (e) => {
+    e.preventDefault();
+    setCredential('DemoUser'); // Use your demo user's username/email
+    setPassword('password'); // Use your demo user's password
+    await dispatch(sessionActions.login({ credential: 'DemoUser', password: 'password' }));
   };
 
   return (
@@ -48,10 +53,9 @@ function LoginFormPage() {
             required
           />
         </label>
-        {Object.values(errors).map((error, idx) => (
-          <p key={idx}>{error}</p>
-        ))}
-        <button type="submit">Log In</button>
+        {Object.values(errors).map((error, idx) => <p key={idx}>{error}</p>)}
+        <button type="submit" disabled={credential.length < 4 || password.length < 6}>Log In</button>
+        <button onClick={handleDemoLogin}>Log in as Demo User</button>
       </form>
     </>
   );

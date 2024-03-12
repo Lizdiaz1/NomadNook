@@ -1,5 +1,6 @@
 import { createContext, useRef, useState, useContext } from 'react';
 import ReactDOM from 'react-dom';
+import './Modal.css'
 
 const ModalContext = createContext();
 
@@ -10,9 +11,11 @@ export function ModalProvider({ children }) {
 
     const closeModal = () => {
       setModalContent(null);
-      if (onModalClose) onModalClose();
-      setOnModalClose(null);
-    };
+      if (typeof onModalClose === "function") {
+        setOnModalClose(null);
+        onModalClose();
+    }
+  };
 
     const contextValue = {
         modalRef, // reference to modal div
@@ -24,7 +27,7 @@ export function ModalProvider({ children }) {
 
     return (
       <>
-        <ModalContext.Provider value={{ contextValue }}>
+        <ModalContext.Provider value={contextValue}>
           {children}
         </ModalContext.Provider>
         <div ref={modalRef} />
@@ -35,7 +38,7 @@ export function ModalProvider({ children }) {
   export function Modal() {
     const { modalRef, modalContent, closeModal } = useContext(ModalContext);
 
-    if (!modalRef.current || !modalContent) return null;
+    if (!modalRef || !modalRef.current || !modalContent) return null;
 
     return ReactDOM.createPortal(
       <div id="modal">
@@ -45,6 +48,3 @@ export function ModalProvider({ children }) {
       modalRef.current
     );
   }
-
-
-  

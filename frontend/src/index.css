@@ -1,1 +1,36 @@
-/* TODO: Add sitewide styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #613e8c;
+  }
+
+  .logo-container img {
+    height: 50px;
+  }
+
+  .auth-buttons {
+    display: flex;
+    gap: 10px; 
+  }
+
+  .auth-buttons button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #ffd700;
+    color: #4b0082;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+
+    .logo-container img {
+      margin-bottom: 20px;
+    }
+  }

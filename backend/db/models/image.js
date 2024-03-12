@@ -11,15 +11,48 @@ module.exports = (sequelize, DataTypes) => {
       }
     };
     Image.init({
-      spotId: DataTypes.INTEGER,
-      type: DataTypes.STRING,
-      preview: DataTypes.BOOLEAN,
-      url: DataTypes.STRING(512)
-    }, {
-      sequelize,
-      modelName: 'Image',
-      tableName: 'Images',
-      
-    });
-    return Image;
-  };
+        id: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          autoIncrement: true,
+          primaryKey: true,
+        },
+        spotId: {
+          type: DataTypes.INTEGER,
+          references: {
+            model: 'Spot',
+            key: 'id'
+          },
+          onUpdate: 'CASCADE',
+          onDelete: 'SET NULL'
+        },
+        type: {
+          type: DataTypes.STRING,
+          allowNull: false
+        },
+        preview: {
+          type: DataTypes.BOOLEAN,
+          allowNull: false
+        },
+        url: {
+          type: DataTypes.STRING(512),
+          allowNull: false
+        },
+        createdAt: {
+          allowNull: false,
+          type: DataTypes.DATE,
+          defaultValue: DataTypes.NOW,
+        },
+        updatedAt: {
+          allowNull: false,
+          type: DataTypes.DATE,
+          defaultValue: DataTypes.NOW,
+        },
+      }, {
+        sequelize,
+        modelName: 'Image',
+        tableName: 'Images'
+      });
+
+      return Image;
+    };

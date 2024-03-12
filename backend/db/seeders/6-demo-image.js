@@ -121,11 +121,10 @@ if (process.env.NODE_ENV === "production") {
 //   },
 // };
 
-
 module.exports = {
-  async up() {
+  async up(queryInterface, Sequelize) {
     try {
-      await Image.bulkCreate([
+      await queryInterface.bulkInsert('Images', [
         {
           spotId: 1,
           Type: 'Spot',
@@ -219,22 +218,26 @@ module.exports = {
           url: "https://pbs.twimg.com/media/E2LgbsUWYAs7Byo.jpg",
           createdAt: new Date(),
           updatedAt: new Date()
-        },
-      ], { validate: true });
-      console.log('Seed successful!');
-    } catch (error) {
-      console.error('Error seeding Images:', error);
-    }
-  },
+        }, ]);
+        console.log('Image seeding successful');
+      } catch (error) {
+        console.error('Error seeding Images:', error);
+      }
+    },
 
-  async down() {
-    try {
-      await Image.destroy({
-        where: {},
-      });
-      console.log('Seed reversal successful!');
-    } catch (error) {
-      console.error('Error reverting Images seed:', error);
-    }
-  },
-};
+    async down(queryInterface, Sequelize) {
+      await queryInterface.bulkDelete('Images', null, {});
+    },
+  };
+
+//   async down() {
+//     try {
+//       await Image.destroy({
+//         where: {},
+//       });
+//       console.log('Seed reversal successful!');
+//     } catch (error) {
+//       console.error('Error reverting Images seed:', error);
+//     }
+//   },
+// };

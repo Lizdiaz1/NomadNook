@@ -1,5 +1,7 @@
 "use strict";
+
 const { Model } = require("sequelize");
+
 module.exports = (sequelize, DataTypes) => {
   class SpotImage extends Model {
     static associate(models) {
@@ -18,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   SpotImage.init(
     {
       spotId: DataTypes.INTEGER,
-      reviewId: DataTypes.INTEGER, 
+      reviewId: DataTypes.INTEGER,
       Type: DataTypes.STRING,
       preview: DataTypes.BOOLEAN,
       url: DataTypes.STRING,

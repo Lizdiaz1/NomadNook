@@ -48,3 +48,5 @@ export function ModalProvider({ children }) {
       modalRef.current
     );
   }
+
+  export const useModal = () => useContext(ModalContext);

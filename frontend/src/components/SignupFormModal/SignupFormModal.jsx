@@ -1,44 +1,46 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import * as sessionActions from '../../store/session';
+import { useModal } from '../../context/Modal'; // Make sure to import useModal
 import './SignupForm.css';
 
-function SignupFormPage() {
+function SignupFormModal() {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Use useNavigate hook for navigation
   const sessionUser = useSelector((state) => state.session.user);
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const { closeModal } = useModal(); // Destructure closeModal from useModal
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
 
-  if (sessionUser) return <Navigate to="/" replace={true} />;
+  // Redirect if user is already logged in
+  if (sessionUser) {
+    navigate('/'); // Use navigate('/') to redirect
+    return null; // Return null to avoid rendering the form when the user is logged in
+  }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      setErrors({});
-      return dispatch(
-        sessionActions.signup({
-          email,
-          username,
-          firstName,
-          lastName,
-          password
-        })
-      ).catch(async (res) => {
-        const data = await res.json();
-        if (data?.errors) {
-          setErrors(data.errors);
-        }
-      });
+    if (password !== confirmPassword) {
+      setErrors({ confirmPassword: "Confirm Password field must be the same as the Password field" });
+      return;
     }
-    return setErrors({
-      confirmPassword: "Confirm Password field must be the same as the Password field"
-    });
+
+    setErrors({});
+    try {
+      await dispatch(sessionActions.signup({ email, username, firstName, lastName, password }));
+      closeModal(); // Close the modal on successful signup
+    } catch (res) {
+      const data = await res.json();
+      if (data && data.errors) {
+        setErrors(data.errors);
+      }
+    }
   };
 
   return (
@@ -111,4 +113,4 @@ function SignupFormPage() {
   );
 }
 
-export default SignupFormPage;
+export default SignupFormModal;

@@ -10,9 +10,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
 
-    /* Fixed Background Image */
-    background-image: url('image in image folder'); /* Mask */
+    .login-form { /* Fixed Background Image */
+    background-image: url(/images/7a8a3d1f-54a6-432d-a24e-b17138ff8a1f.png); /* Mask */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

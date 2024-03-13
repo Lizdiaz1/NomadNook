@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { FaUserCircle } from 'react-icons/fa';
 import * as sessionActions from '../../store/session';
 import OpenModalMenuItem from './OpenModalMenuItem';
-import LoginFormPage from '../LoginFormModal';
-import SignupFormPage from '../SignupFormPage';
+import LoginFormPage from '../LoginFormModal/LoginFormModal';
+import SignupFormPage from '../SignupFormModal';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();

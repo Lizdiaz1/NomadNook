@@ -4,9 +4,8 @@ import * as sessionActions from '../../store/session';
 import './LoginForm.css';
 import { useModal } from '../../context/Modal';
 
-const LoginFormModal = () => {
+function LoginFormModal () {
   const dispatch = useDispatch();
-  // Removed the sessionUser variable since it's unused in the current version of your component.
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -81,6 +80,6 @@ const LoginFormModal = () => {
       </form>
     </>
   );
-};
+}
 
 export default LoginFormModal;

@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
 import "./index.css";
 import App from "./App";
-import configureStore from "./store";
+import configureStore from "./store/store";
 import * as sessionActions from "./store/session";
 import { csrfFetch, restoreCSRF } from "./store/csrf";
 import { Modal, ModalProvider } from "./context/Modal";
@@ -37,3 +37,5 @@ if (!rootElement) throw new Error('Failed to find the root element');
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(<Root />);
+
+export default Root;

@@ -4,7 +4,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import * as sessionActions from '../../store/session';
 import OpenModalMenuItem from './OpenModalMenuItem';
 import LoginFormPage from '../LoginFormModal/LoginFormModal';
-import SignupFormPage from '../SignupFormModal';
+import SignupFormModal from '../SignupFormModal/SignupFormModal';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -68,7 +68,7 @@ function ProfileButton({ user }) {
               <OpenModalMenuItem
                 buttonText="Sign Up"
                 onButtonClick={closeMenu}
-                modalComponent={<SignupFormPage />}
+                modalComponent={<SignupFormModal />}
               />
             </li>
           </>

@@ -1,7 +1,157 @@
-#root {
-    font-family: 'Times New Roman', Times, serif;
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+
+    padding-right: 5 px	;
+  }
+
+  a, li, button {
+    text-align: center;
+      text-decoration: none;
+      color: rgb(114, 11, 121);
+      font-size: 30px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  li {
+    display: flex;
+     list-style-type: none;
+     font-size: 30px;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  button {
+    background: #ff4742;
+    border: 1px solid #ff4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    padding: 12px 14px;
+    text-align: center;
+
   }
 
   .hidden {
-    display: none;
+      display: none;
+      visibility: hidden;
+  }
+
+  .logo {
+    padding-top: 5px;
+
+    justify-content: center;
+  }
+
+  .profile-button {
+    padding-right: 40px;
+    align-self: center;
+  }
+
+  nav {
+    justify-content: center;
+
+  }
+
+
+  header {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 5px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+  }
+
+  .profile-dropdown {
+    margin-right: 40px;
+    margin-top: 10px;
+    font-size: 10px;
+    position: absolute;
+    right: 0;
+    border: solid black 1px ;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+
+  .dropdown-li {
+    justify-content: center;
+
+    margin: 0 auto;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .dropdown-li-logout, .dropdown-li-login, .dropdown-li-signup {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .actual-profile-button:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px  ;
+  }
+
+  .actual-profile-button {
+    border-radius: 20px;
+    background-color: white;
+    border-color: gray;
+    color: gray;
+  }
+
+  .manage-spots{
+    background: white;
+    color: black;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+  }
+  .email {
+    border-bottom: black solid 1px;
+  }
+
+  .manage {
+    border-bottom: black solid 1px;
+  }
+
+  .logout {
+    border-radius: 40px;
+    margin: 0 auto;
+  }
+
+  .newSpotButton {
+
+    align-self: center;
+    margin: 0 auto;
+    margin-right: 20px;
+  }
+
+  .right-side-nav{
+    display: flex;
+  }
+
+  .new-spot-button {
+    background: white;
+      color: rgb(37, 130, 201);
+      border: none;
+  }
+
+  .initial-login, .initial-signup {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .initial-login:hover, .initial-signup:hover{
+    box-shadow: 6px 6px 6px rgba(11, 11, 11, 0.1);
+    border: rgb(225, 4, 203) solid 1px;
   }

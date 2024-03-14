@@ -1,13 +1,13 @@
-import "./index.css";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import { Provider as ReduxProvider } from "react-redux";
-import "./index.css";
-import App from "./App";
-import configureStore from "./store/store";
-import * as sessionActions from "./store/session";
-import { csrfFetch, restoreCSRF } from "./store/csrf";
-import { Modal, ModalProvider } from "./context/Modal";
+import './index.css';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider as ReduxProvider } from 'react-redux';
+import './index.css';
+import App from './App';
+import configureStore from './store/store';
+import * as sessionActions from './store/session';
+import { csrfFetch, restoreCSRF } from './store/csrf';
+import { Modal, ModalProvider } from './context/Modal';
 
 const store = configureStore();
 

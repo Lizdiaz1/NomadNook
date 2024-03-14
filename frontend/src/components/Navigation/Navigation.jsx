@@ -2,9 +2,14 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
+import LoginFormModal from '../LoginFormModal/LoginFormModal';
+import SignupFormModal from '../SignupFormModal/SignupFormModal';
+import { useModal } from '../../context/Modal';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const { showModal } = useModal();
+
 
   let sessionLinks;
   if (sessionUser) {
@@ -29,10 +34,13 @@ function Navigation() {
         <div className="nav-links">
           <NavLink to="/">Home</NavLink>
           {sessionLinks}
+      <button onClick={() => showModal(<LoginFormModal />)}>Log In</button> {/* Replace <LoginForm /> with your login form component */}
+    <button onClick={() => showModal(<SignupFormModal />)}>Sign Up</button> {/* Replace <SignupForm /> with your signup form component */}
+
         </div>
       </nav>
     </header>
   );
 }
 
-export default Navigation; 
+export default Navigation;

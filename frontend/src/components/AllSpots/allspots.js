@@ -1,0 +1,76 @@
+// frontend/src/components/AllSpots/allspots.js
+
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import './AllSpots.css';
+import { getSpots } from '../../store/spots.js';
+import { NavLink } from 'react-router-dom';
+
+const AllSpots = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getSpots());
+    }, [dispatch]);
+
+    const spots = useSelector((state) => {
+        // Ensure this maps correctly to your state shape
+        return state.spots.list.map((spotId) => state.spots[spotId]);
+    });
+
+    if (spots.length === 0) {
+        return null; // Consider adding a loading indicator or a message
+    }
+
+    const getDecimal = (num) => {
+        return num > 0 ? (Math.round(num * 100) / 100).toFixed(1) : 0;
+    };
+
+    return (
+        <div className='outer-nav-container'>
+            <nav>
+                {[...spots].reverse().map((spot) => (
+                    <div key={spot.id} className='all-spots'>
+                        <NavLink to={`/spots/${spot.id}`}>
+                            <div className='thumbnail-container'>
+                                <img
+                                    src={`${spot.previewImage}`}
+                                    alt='Spot Preview Image'
+                                    className='thumbnail-image'
+                                    title={`${spot.name}`}
+                                />
+                                <div className='thumbnail-info'>
+                                    <div className='secondary-text'>
+                                        {spot.avgRating === 0 ? (
+                                            <>
+                                                <div className='address-text'>{`${spot.city}, ${spot.state}`}</div>
+                                                <div className='star-text'>
+                                                    <i className='fa-solid fa-star'></i> New
+                                                </div>
+                                                <div className='price-text'>
+                                                    <b>${spot.price}</b> night
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className='address-text'>{`${spot.city}, ${spot.state}`}</div>
+                                                <div className='star-text'>
+                                                    <i className='fa-solid fa-star'></i> {getDecimal(spot.avgRating)}
+                                                </div>
+                                                <div className='price-text'>
+                                                    <b>${spot.price}</b> night
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </NavLink>
+                    </div>
+                ))}
+            </nav>
+        </div>
+    );
+};
+
+export default AllSpots;

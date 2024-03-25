@@ -1,36 +1,88 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #613e8c;
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  /*background-image: url('cherry-blossoms.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffd700;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header, .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #6b238e;
+}
+
+/* Logo styles */
+.logo-container img {
+  height: 50px;
+}
+
+/* Authentication buttons container styles */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Authentication button styles */
+.auth-buttons button, .button {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Default button colors */
+.auth-buttons button {
+  background-color: #ffd700;
+  color: #6b238e;
+}
+
+/* Button hover effect */
+.auth-buttons button:hover, .button:hover {
+  background-color: #cca30e;
+}
+
+/* Media query for responsive layout */
+@media (max-width: 768px) {
+  header, .header {
+      flex-direction: column;
   }
 
   .logo-container img {
-    height: 50px;
-  }
-
-  .auth-buttons {
-    display: flex;
-    gap: 10px; 
-  }
-
-  .auth-buttons button {
-    padding: 5px 10px;
-    cursor: pointer;
-    border: none;
-    background-color: #ffd700;
-    color: #4b0082;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-    }
-
-    .logo-container img {
       margin-bottom: 20px;
-    }
   }
+}
+
+/* Main content styles */
+.main-content {
+  padding: 20px;
+}
+
+/* Title styles */
+.title {
+  color: #6b238e;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Subtitle styles */
+.subtitle {
+  color: #ffd700;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #6b238e;
+  color: #ffd700;
+  padding: 20px;
+  text-align: center;
+}

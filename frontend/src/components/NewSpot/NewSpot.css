@@ -1,0 +1,77 @@
+/* NewSpot.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; 
+    color: #000000;
+}
+
+/* Container */
+.new-spot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* background-image: url('cherry-blossoms.jpg'); */
+    background-size: cover;
+}
+
+/* Heading */
+.new-spot-container h1 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.newSpotForm {
+    width: 300px;
+    background-color: rgba(107, 35, 142, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label */
+.form-group label {
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
+/* Input */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Error message */
+.error {
+    color: #ff0000;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Submit button */
+.form-group button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffd700;
+    color: #6b238e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button[type="submit"]:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}

@@ -1,0 +1,75 @@
+/* ReviewForm.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Form container */
+.review-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #6b238e;
+}
+
+/* Textarea for review */
+.review-textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #6b238e;
+    border-radius: 5px;
+}
+
+.review-textarea textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+/* Star rating */
+.stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stars span {
+    color: #d4af37;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.stars span.filled {
+    color: #ffd700;
+}
+
+/* Review button */
+.review-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6b238e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-button:hover {
+    background-color: #4c165d;
+}
+
+.review-button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}

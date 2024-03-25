@@ -1,0 +1,121 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Outer div container */
+.outer-div-manage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   /* background-image: url('cherry-blossoms.jpg'); */
+    background-size: cover;
+    padding: 20px;
+}
+
+/* Manage spots header */
+.manage-spots-header {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Navigation container */
+nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Spot container */
+.all-spots {
+    background-color: rgba(107, 35, 142, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Thumbnail container */
+.thumbnail-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Thumbnail image */
+.thumbnail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Thumbnail info */
+.thumbnail-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Secondary text */
+.secondary-text {
+    color: #ffffff;
+}
+
+/* Address text */
+.address-text {
+    font-size: 14px;
+}
+
+/* Star text */
+.star-text {
+    font-size: 16px;
+}
+
+/* Price text */
+.price-text {
+    font-size: 16px;
+}
+
+/* Update and delete container */
+.update-delete-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Update and delete buttons */
+.update-delete-buttons button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-delete-buttons .update {
+    background-color: #ffd700;
+    color: #6b238e;
+}
+
+.update-delete-buttons .update:hover {
+    background-color: #ffd700;
+}
+
+.update-delete-buttons .delete-button {
+    background-color: #6b238e;
+    color: #ffffff;
+}
+
+.update-delete-buttons .delete-button:hover {
+    background-color: #4c165d;
+}

@@ -84,7 +84,7 @@ const NewSpot = () => {
     return (
         <div className="new-spot-container">
             <h1>Create a New Spot</h1>
-            {renderErrors()} 
+            {renderErrors()}
             <form onSubmit={handleSubmit} className="newSpotForm">
                 <div className="form-group">
                     <label htmlFor="title">Title</label>

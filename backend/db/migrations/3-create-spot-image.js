@@ -16,11 +16,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       spotId: {
-        allowNull: false, // Ensure this is uncommented if every image must be linked to a spot
+        allowNull: false, //  uncommented if every image must be linked to a spot
         type: Sequelize.INTEGER,
         references: { model: 'Spots', key: 'id' },
         onUpdate: 'CASCADE', // Consider adding onUpdate and onDelete behavior if needed
-        onDelete: 'SET NULL' // or 'CASCADE' depending on how you want to handle deletion of a Spot
+        onDelete: 'SET NULL' // or 'CASCADE' depending on want to handle deletion of a Spot
       },
       url: {
         allowNull: false,

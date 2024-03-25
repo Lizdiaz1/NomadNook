@@ -10,7 +10,7 @@ import SpotDetails from './components/SpotDetails/spotdetails';
 import configureStore from './store';
 import { Provider } from 'react-redux';
 import UpdateSpot from './components/UpdateSpot/updatespot';
-import userSpots from './components/UserSpots/UserSpots';
+// import userSpots from './components/UserSpots/UserSpots';
 import CreateSpot from './components/CreateSpot/CreateSpot';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';

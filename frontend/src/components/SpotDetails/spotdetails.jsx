@@ -332,9 +332,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { getOne as getOneSpot } from "../../store/spot";
 import { getReviews as getReviewsForSpot } from "../../store/reviews";
 import "./SpotDetails.css";
-import OpenModalButton from "../OpenModalButton";
-import ReviewFormModal from "../ReviewFormModal";
-import DeleteReviewModal from "../DeleteReviewModal";
+import OpenModalButton from "../OpenModalButton/OpenModalButton";
+import ReviewFormModal from "../ReviewFormModal/reviewform";
+import DeleteReviewModal from "../DeleteReviewModal/deletereview";
 //import { NavLink } from "react-router-dom";
 
 

@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import "./deleteReview.css";
+import "./DeleteSpotModal.css";
 import { useModal } from "../../context/Modal";
-import { deleteReview } from "../../store/reviews";
+import { deleteSpot } from "../../store/userSpot";
 
-const DeleteReviewModal = ({ reviewId }) => {
+const DeleteSpotModal = ({ spotId }) => {
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState({});
 	const { closeModal } = useModal();
 
-	//console.log(reviewId);
+	//console.log(spotId);
 
 	const handleAgree = (e) => {
 		e.preventDefault();
 		setErrors({});
-		dispatch(deleteReview(reviewId))
-			.then(() => closeModal())
+		return dispatch(deleteSpot(spotId))
+			.then(closeModal)
 			.catch(async (res) => {
 				const data = await res.json();
 				if (data && data.message) setErrors({ message: data.message });
@@ -34,16 +34,16 @@ const DeleteReviewModal = ({ reviewId }) => {
 			<h1>Confirm Delete</h1>
 			<form className="delete-form" onSubmit={(e) => e.preventDefault}>
 				{errors && <p>{errors.message}</p>}
-				<h2>Are you sure you want to delete this review?</h2>
+				<h2>Are you sure you want to remove this spot from the listings?</h2>
 				<button className="yes-delete" type="submit" onClick={handleAgree}>
-					Yes(Delete Review)
+					Yes(Delete Spot)
 				</button>
 				<button onClick={handleDisagree} className="dont-delete" type="submit">
-					No(Keep Review)
+					No(Keep Spot)
 				</button>
 			</form>
 		</>
 	);
 };
 
-export default DeleteReviewModal;
+export default DeleteSpotModal;

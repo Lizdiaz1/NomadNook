@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createNewSpot } from "../../store/spots.js";
-import { addImage } from "../../store/images";
-import { getSpots } from "../../store/spots.js"
+import { addImage } from "../../store/images.js";
+import { getSpots } from "../../store/spots.js";
+import "./NewSpot.css"
 
 const NewSpot = () => {
     const dispatch = useDispatch();

@@ -12,8 +12,8 @@ import { Provider } from 'react-redux';
 import UpdateSpot from './components/UpdateSpot/updatespot';
 // import userSpots from './components/UserSpots/UserSpots';
 import NewSpot from './components/NewSpot/newspot';
-import SignupFormModal from './components/SignupFormModal/SignupFormModal';
 import LoginFormModal from './components/LoginFormModal/LoginFormModal';
+import SignupFormModal from './components/SignupFormModal/SignupFormModal';
 
 const store = configureStore();
 

@@ -11,9 +11,9 @@ import configureStore from './store';
 import { Provider } from 'react-redux';
 import UpdateSpot from './components/UpdateSpot/updatespot';
 // import userSpots from './components/UserSpots/UserSpots';
-import CreateSpot from './components/CreateSpot/CreateSpot';
-import SignIn from './components/SignIn/SignIn';
-import SignUp from './components/SignUp/SignUp';
+import NewSpot from './components/NewSpot/newspot';
+import SignupFormModal from './components/SignupFormModal/SignupFormModal';
+import LoginFormModal from './components/LoginFormModal/LoginFormModal';
 
 const store = configureStore();
 
@@ -42,9 +42,9 @@ const router = createBrowserRouter([
       { path: 'spots/:spotId', element: <SpotDetails /> }, //Spot Details
       { path: 'spots/:spotId/update', element: <UpdateSpot /> }, // Update Spot
       { path: 'spots/current', element: <userSpots /> }, // Spots owned by current user
-      { path: 'spots/new', element: <CreateSpot /> }, // Create a new spot
-      { path: 'session/sign-in', element: <SignIn /> }, // Sign in page
-      { path: 'session/sign-up', element: <SignUp /> }, // Sign up page
+      { path: 'spots/new', element: <NewSpot /> }, // Create a new spot
+      { path: 'session/sign-in', element: <LoginFormModal /> }, // Sign in page
+      { path: 'session/sign-up', element: <SignupFormModal /> }, // Sign up page
     ],
   },
 ]);

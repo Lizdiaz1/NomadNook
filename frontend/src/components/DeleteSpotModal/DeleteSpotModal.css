@@ -1,0 +1,77 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/cherry_blossoms.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ffd700;
+}
+
+/* Modal container styles */
+.delete-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+}
+
+/* Title styles */
+.delete-modal h1 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+.delete-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Message styles */
+.delete-form h2 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Error message styles */
+.delete-form p {
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+.yes-delete,
+.dont-delete {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.yes-delete {
+    background-color: #ffd700;
+    color: #6b238e;
+}
+
+.yes-delete:hover {
+    background-color: #cca30e;
+}
+
+.dont-delete {
+    background-color: #6b238e;
+    color: #ffd700;
+}
+
+.dont-delete:hover {
+    background-color: #4f1a69;
+}

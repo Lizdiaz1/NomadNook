@@ -8,7 +8,7 @@ export const Navbar = () => {
   return (
     <nav style={{ justifyContent: 'flex-end' }}>
       <button onClick={() => showModal(<LoginForm />)}>Log In</button>
-      <button onClick={() => showModal(<LoginForm />)}>Sign Up</button> {/* Implement sign-up similarly */}
+      <button onClick={() => showModal(<LoginForm />)}>Sign Up</button> {}
     </nav>
   );
 };

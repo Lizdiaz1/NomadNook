@@ -166,11 +166,11 @@ router.get("/", async (req, res) => {
 		searchQuery.price = { [Op.between]: [minPrice, maxPrice] };
 	}
 
-	//console.log(searchQuery)
+	
 
 	if (page > 0 && size > 0) {
 		query.limit = size;
-		// offset = size * (page - 1)
+
 		query.offset = size * (page - 1);
 	}
 
@@ -179,10 +179,7 @@ router.get("/", async (req, res) => {
 			{
 				model: Review,
 				attributes: ["stars"],
-				// attributes: [
-				// 	[sequelize.fn("AVG", sequelize.col("Reviews.stars")), "avgRating"],
-				// ],
-			},
+				},
 			{
 				model: SpotImage,
 				attributes: ["url", "isPreview"],
@@ -196,7 +193,7 @@ router.get("/", async (req, res) => {
 
 	let spotList = [];
 
-	//console.log(yourSpots);
+
 
 	yourSpots.forEach((spot) => {
 		spotList.push(spot.toJSON());
@@ -236,14 +233,14 @@ router.get("/", async (req, res) => {
 				for (let j = 0; j < currSpot.Reviews.length; j++) {
 					const currReview = spotList[i].Reviews[j];
 					stars += currReview.stars;
-					//console.log(stars, "#######")
+
 				}
 				let avgRating = stars / currSpot.Reviews.length;
 				if (avgRating) {
 					avgRating = avgRating.toFixed(1);
 					currSpot.avgRating = Number(avgRating);
 				} else currSpot.avgRating = 0;
-				//console.log(currSpot)
+
 				//spotList[i].avgStarRating = spotList[i].Reviews[i].avgRating;
 			}
 
@@ -369,9 +366,7 @@ router.get("/current", requireAuth, async (req, res) => {
 			{
 				model: Review,
 				attributes: ["stars"],
-				// attributes: [
-				// 	[sequelize.fn("AVG", sequelize.col("Reviews.stars")), "avgRating"],
-				// ],
+
 			},
 			{
 				model: SpotImage,
@@ -388,7 +383,7 @@ router.get("/current", requireAuth, async (req, res) => {
 
 	let spotList = [];
 
-	//console.log(yourSpots);
+
 
 	yourSpots.forEach((spot) => {
 		spotList.push(spot.toJSON());
@@ -402,14 +397,14 @@ router.get("/current", requireAuth, async (req, res) => {
 				for (let j = 0; j < currSpot.Reviews.length; j++) {
 					const currReview = spotList[i].Reviews[j];
 					stars += currReview.stars;
-					//console.log(stars, "#######")
+
 				}
 				let avgRating = stars / currSpot.Reviews.length;
 				if (avgRating) {
 					avgRating = avgRating.toFixed(1);
 					currSpot.avgRating = Number(avgRating);
 				} else currSpot.avgRating = 0;
-				//console.log(currSpot)
+
 				//spotList[i].avgStarRating = spotList[i].Reviews[i].avgRating;
 			}
 
@@ -471,7 +466,6 @@ router.get("/:spotId", async (req, res) => {
 		spotList.push(spot.toJSON());
 	});
 
-	//console.log(spotList[0].Reviews[0].avgRating);
 
 	if (spotList[0].Reviews[0]) {
 		spotList[0].numReviews = spotList[0].Reviews[0].numReviews;
@@ -623,7 +617,6 @@ router.get("/:spotId/reviews", async (req, res) => {
 		},
 	});
 
-	//console.log(checkSpot)
 
 	if (!checkSpot.length) {
 		res.status(404);
@@ -656,10 +649,7 @@ router.get("/:spotId/reviews", async (req, res) => {
 					exclude: ["description", "avgRating", "createdAt", "updatedAt"],
 				},
 			},
-			// {
-			// 	model: ReviewImage,
-			// 	attributes: ["id", "url"],
-			// },
+
 		],
 	});
 
@@ -675,7 +665,6 @@ router.get("/:spotId/reviews", async (req, res) => {
 		reviewsList.push(Review.toJSON());
 	});
 
-	//console.log(reviewsList[0].Spot.id)
 
 	for (let i = 0; i < reviewsList.length; i++) {
 		let currReview = reviewsList[i];
@@ -768,7 +757,6 @@ router.post(
 			spotList.push(el.toJSON());
 		});
 
-		//console.log(spotList[0].Reviews)
 
 		for (let i = 0; i < spotList[0].Reviews.length; i++) {
 			let currReview = spotList[0].Reviews[i];

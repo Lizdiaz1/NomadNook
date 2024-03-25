@@ -13,8 +13,13 @@ function Navigation() {
 
   let sessionLinks;
   if (sessionUser) {
-    // If there's a session user, show profile button
-    sessionLinks = <ProfileButton user={sessionUser} />;
+    // If there's a session user
+    sessionLinks = (
+      <>
+        <ProfileButton user={sessionUser} />
+        <NavLink to="/new-spot">Create a New Spot</NavLink>
+      </>
+    );
   } else {
     // If no session user, show Log In and Sign Up links
     sessionLinks = (

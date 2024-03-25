@@ -1,5 +1,3 @@
-// frontend/src/components/AllSpots/allspots.js
-
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './AllSpots.css';
@@ -19,7 +17,7 @@ const AllSpots = () => {
     });
 
     if (spots.length === 0) {
-        return null; // Consider adding a loading indicator or a message
+        return null; // Consider a possible loading indicator or a message
     }
 
     const getDecimal = (num) => {

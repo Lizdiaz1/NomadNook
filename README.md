@@ -4,7 +4,7 @@
 
 ![db-schema]
 
-[db-schema]: /images/NomadNook.png
+[db-schema]: frontend/public/images/NomadNook.png
 
 ## API Documentation
 

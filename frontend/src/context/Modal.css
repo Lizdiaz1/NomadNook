@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/cherry_blossoms.png');
+  background-image: url('/frontend/public/images/cherry_blossoms.png');
   background-size: cover;
   background-repeat: no-repeat;
   filter: blur(4px);

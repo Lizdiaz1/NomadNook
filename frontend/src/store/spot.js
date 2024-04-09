@@ -1,5 +1,7 @@
 import { csrfFetch } from "./csrf";
 
+
+
 // Action Types
 const CREATE_SPOT = "spot/CREATE_SPOT";
 const DELETE_SPOT = "spot/DELETE_SPOT";

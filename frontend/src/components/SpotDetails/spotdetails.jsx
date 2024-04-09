@@ -12,8 +12,7 @@
 // 	const dispatch = useDispatch();
 
 // 	let { spotId } = useParams();
-// 	//console.log(spotId, "spotId use params");
-// 	//console.log(useParams());
+
 
 // 	const [avgStars, setAvgStars] = useState(0);
 

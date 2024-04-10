@@ -11,12 +11,12 @@ import { Modal, ModalProvider } from './context/Modal';
 
 const store = configureStore();
 
-if (process.env.NODE_ENV !== "production") {
-	restoreCSRF();
+if (import.meta.env.MODE !== "production") {
+  restoreCSRF();
 
-	window.csrfFetch = csrfFetch;
-	window.store = store;
-	window.sessionActions = sessionActions;
+  window.csrfFetch = csrfFetch;
+  window.store = store;
+  window.sessionActions = sessionActions; 
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(

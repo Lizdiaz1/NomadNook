@@ -1,4 +1,4 @@
-//import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
@@ -19,23 +19,36 @@ if (process.env.NODE_ENV !== "production") {
 	window.sessionActions = sessionActions;
 }
 
-function Root() {
-	return (
-		<ModalProvider>
-			<ReduxProvider store={store}>
-				<BrowserRouter>
-					<App />
-					<Modal />
-				</BrowserRouter>
-			</ReduxProvider>
-		</ModalProvider>
-	);
-}
+ReactDOM.createRoot(document.getElementById('root')).render(
+<React.StrictMode>
+	<ModalProvider>
+		<ReduxProvider store={store}>
+			<BrowserRouter>
+				<App />
+				<Modal />
+			</BrowserRouter>
+		</ReduxProvider>
+	</ModalProvider>
+</React.StrictMode>
+  );
 
-const rootElement = document.getElementById('root');
-if (!rootElement) throw new Error('Failed to find the root element');
-const root = ReactDOM.createRoot(rootElement);
+// function Root() {
+// 	return (
+// 		<ModalProvider>
+// 			<ReduxProvider store={store}>
+// 				<BrowserRouter>
+// 					<App />
+// 					<Modal />
+// 				</BrowserRouter>
+// 			</ReduxProvider>
+// 		</ModalProvider>
+// 	);
+// }
 
-root.render(<Root />);
+// const rootElement = document.getElementById('root');
+// if (!rootElement) throw new Error('Failed to find the root element');
+// const root = ReactDOM.createRoot(rootElement);
 
-export default Root;
+// root.render(<Root />);
+
+// export default Root;

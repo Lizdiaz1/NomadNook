@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./ReviewForm.css";
 import { useModal } from "../../context/Modal";
 import { postReview } from "../../store/reviews";
@@ -11,7 +11,7 @@ const ReviewFormModal = ({ spotId }) => {
 	const [stars, setStars] = useState(0);
 	const [permaStars, setPermaStars] = useState(0)
 	const [errors, setErrors] = useState({});
-	const history = useHistory();
+	const history = useNavigate();
 	const { closeModal } = useModal();
 
 	const handleSubmit = async (e) => {
@@ -27,7 +27,7 @@ const ReviewFormModal = ({ spotId }) => {
 				const data = await res.json();
 
 				if (data && data.message) setErrors({ message: data.message });
-				
+
 				alert(data.message);
 			}
 		);
@@ -35,7 +35,7 @@ const ReviewFormModal = ({ spotId }) => {
 		if (createdReview) {
 			closeModal();
 		}
-		return history.push(`/spots/${spotId}`);
+		return history(`/spots/${spotId}`);
 	};
 
 	const handleDisabled = (review, stars) => {

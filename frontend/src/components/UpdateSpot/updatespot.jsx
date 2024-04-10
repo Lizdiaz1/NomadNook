@@ -1,18 +1,19 @@
 import "./UpdateSpot.css";
 import { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { getOne, updateSpot } from "../../store/spot";
+import { getOneSpot } from "../../store/spot";
+import { updateExistingSpot } from "../../store/spots";
 
 const UpdateSpot = () => {
 	const dispatch = useDispatch();
-	const history = useHistory();
+	const history = useNavigate();
 	const spot = history.location.state?.prop1;
 	const { spotId } = useParams();
 
 
     useEffect(() => {
-        dispatch(getOne(spotId));
+        dispatch(getOneSpot(spotId));
     }, [dispatch, spotId]);
 
 
@@ -107,7 +108,7 @@ if (spot.SpotImages) {
 		setErrors({});
 		setCreateClick(true);
 
-		return dispatch(updateSpot(payload, spotId)).then(
+		return dispatch(updateExistingSpot(payload, spotId)).then(
 			() => {
 				return history.push(`/spots/${spotId}`);
 			},

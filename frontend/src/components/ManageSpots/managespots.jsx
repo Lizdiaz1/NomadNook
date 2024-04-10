@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./ManageSpots.css";
 import { getUserSpots } from "../../store/userSpot";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import DeleteSpotModal from "../DeleteSpotModal";
 
 const ManageSpots = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
+    const history = useNavigate();
 
     const spots = useSelector((state) => {
         return state.userSpots.userList.map((spotId) => state.userSpots[spotId]);

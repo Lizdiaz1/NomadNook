@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createNewSpot } from "../../store/spots.js";
 import { addImage } from "../../store/images.js";
@@ -8,7 +8,7 @@ import "./NewSpot.css"
 
 const NewSpot = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
+    const history = useNavigate();
 
     // State hooks for form inputs
     const [country, setCountry] = useState("");

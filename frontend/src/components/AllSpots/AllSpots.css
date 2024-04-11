@@ -12,8 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('/frontend/public/images/cherry_blossoms.png');
-    background-size: cover;
+    background-image: url('/images/cherry_blossoms.png');
+    background-size: cover; 
 }
 
 /* Navigation container */

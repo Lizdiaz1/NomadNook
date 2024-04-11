@@ -14,7 +14,7 @@ import UpdateSpot from './components/UpdateSpot/updatespot';
 import NewSpot from './components/NewSpot/newspot';
 import SignupFormModal from './components/SignupFormModal/SignupFormModal';
 import LoginFormModal from './components/LoginFormModal/LoginFormModal';
-import './index.css';
+// import './index.css';
 
 const store = configureStore();
 

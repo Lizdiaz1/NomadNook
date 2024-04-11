@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('/frontend/public/images/cherry_blossoms.png');
+    background-image: url('/images/cherry_blossoms.png');
     background-size: cover;
     background-repeat: no-repeat;
     color: #ffd700;

@@ -11,6 +11,7 @@ module.exports = {
   production: {
     use_env_variable: "DATABASE_URL",
     dialect: "postgres",
+    schema: 'nomadnook',
     seederStorage: "sequelize",
     dialectOptions: {
       ssl: {

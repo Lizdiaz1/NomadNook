@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "sequelize": "sequelize",
     "sequelize-cli": "sequelize-cli",
     "start": "per-env",
     "start:development": "nodemon ./bin/www",
     "start:production": "node ./bin/www",
-    "build": "node psql-setup-script.js"
+    "install-dependencies": " npm init -y &&  npm install cookie-parser && npm install cors && npm install csurf && npm install dotenv && npm install express && npm install express-async-errors && npm install helmet && npm install jsonwebtoken && npm install morgan && npm install per-env && npm install sequelize@6 && npm install sequelize-cli@6 && npm install pg && npm install -D sqlite3 && npm install -D dotenv-cli && npm install -D nodemon && npm install date-fns --save",
+    "build": "node psql-setup-script.js",
+    "rebuild-db": "npx dotenv sequelize db:seed:undo:all && npx dotenv sequelize db:migrate:undo:all && npx dotenv npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all "
   },
   "keywords": [],
   "author": "",

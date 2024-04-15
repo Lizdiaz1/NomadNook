@@ -9,17 +9,15 @@ function LoginFormModal () {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
-  
-
   const { closeModal } = useModal();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors({});
-    dispatch(sessionActions.login({ credential, password })) // Make sure this matches the exported action creator's name.
+    dispatch(sessionActions.login({ credential, password })) 
       .then(() => closeModal())
       .catch(async (res) => {
-        // Assuming your backend returns errors in a format that includes a property named 'errors'.
+
         if (res.data && res.data.errors) {
           setErrors(res.data.errors);
         }

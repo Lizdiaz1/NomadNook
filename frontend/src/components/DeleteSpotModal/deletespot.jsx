@@ -4,7 +4,7 @@ import "./DeleteSpotModal.css";
 import { useModal } from "../../context/Modal";
 import { deleteSpot } from "../../store/userSpot";
 
-const DeleteSpotModal = ({ spotId }) => {
+function DeleteSpotModal ({ spotId }) {
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState({});
 	const { closeModal } = useModal();
@@ -38,12 +38,12 @@ const DeleteSpotModal = ({ spotId }) => {
 				<button className="yes-delete" type="submit" onClick={handleAgree}>
 					Yes(Delete Spot)
 				</button>
-				<button onClick={handleDisagree} className="dont-delete" type="submit">
+				<button onClick={handleDisagree} className="don't-delete" type="submit">
 					No(Keep Spot)
 				</button>
 			</form>
 		</>
 	);
-};
+}
 
 export default DeleteSpotModal;

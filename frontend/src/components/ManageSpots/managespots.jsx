@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import DeleteSpotModal from "../DeleteSpotModal";
 
-const ManageSpots = () => {
+function ManageSpots () {
     const dispatch = useDispatch();
     const history = useNavigate();
 
@@ -92,6 +92,6 @@ const ManageSpots = () => {
             </div>
         </>
     );
-};
+}
 
 export default ManageSpots;

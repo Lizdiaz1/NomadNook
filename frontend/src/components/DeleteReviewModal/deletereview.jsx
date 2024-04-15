@@ -4,46 +4,36 @@ import "./DeleteReviewModal.css";
 import { useModal } from "../../context/Modal";
 import { deleteReview } from "../../store/reviews";
 
-const DeleteReviewModal = ({ reviewId }) => {
-	const dispatch = useDispatch();
-	const [errors, setErrors] = useState({});
-	const { closeModal } = useModal();
 
-	//console.log(reviewId);
+function DeleteReview({reviewId, spotId}){
+    // const {spotId} = useParams()
+    const { closeModal } = useModal()
+    const dispatch = useDispatch()
+    const [errors, setErrors] = useState({})
+    const deleteClick = (e) => {
+        e.preventDefault()
+        setErrors({})
+        dispatch(deleteReview(reviewId, spotId))
+            .then(closeModal)
+            .catch(async (res) => {
+                let data = await res.json()
+                if (data && data.errors) setErrors(data.errors)
+            })
+    }
+    return (
+        <>
+        <form className="delete-form">
+                <div><h3>Confirm Delete</h3>
+                    <h5>Are you sure you want to delete this review?</h5>
+                    {errors.message && (
+                        <div>{errors}</div>
+                    )}
+                    <div><button onClick={deleteClick} className="deletebtn">Yes (Delete Review)</button></div>
+                    <button onClick={closeModal} className="dontDeleteBtn">No (Keep Review)</button>
+                </div>
+            </form>
+        </>
+    )
+}
 
-	const handleAgree = (e) => {
-		e.preventDefault();
-		setErrors({});
-		dispatch(deleteReview(reviewId))
-			.then(() => closeModal())
-			.catch(async (res) => {
-				const data = await res.json();
-				if (data && data.message) setErrors({ message: data.message });
-				//console.log(data)
-				alert(data.message);
-			});
-	};
-
-	const handleDisagree = (e) => {
-		e.preventDefault();
-		return closeModal();
-	};
-
-	return (
-		<>
-			<h1>Confirm Delete</h1>
-			<form className="delete-form" onSubmit={(e) => e.preventDefault}>
-				{errors && <p>{errors.message}</p>}
-				<h2>Are you sure you want to delete this review?</h2>
-				<button className="yes-delete" type="submit" onClick={handleAgree}>
-					Yes(Delete Review)
-				</button>
-				<button onClick={handleDisagree} className="dont-delete" type="submit">
-					No(Keep Review)
-				</button>
-			</form>
-		</>
-	);
-};
-
-export default DeleteReviewModal;
+export default DeleteReview

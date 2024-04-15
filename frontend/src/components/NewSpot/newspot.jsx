@@ -6,7 +6,7 @@ import { addImage } from "../../store/images.js";
 import { getSpots } from "../../store/spots.js";
 import "./NewSpot.css"
 
-const NewSpot = () => {
+function NewSpot () {
     const dispatch = useDispatch();
     const history = useNavigate();
 

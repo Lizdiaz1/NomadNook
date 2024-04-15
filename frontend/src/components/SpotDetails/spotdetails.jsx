@@ -330,7 +330,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getOneSpot } from "../../store/spot";
 import { getReviews as getReviewsForSpot } from "../../store/reviews";
-import { styles } from "./SpotDetails.css";
+import "./SpotDetails.css";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import ReviewFormModal from "../ReviewFormModal/reviewform";
 import DeleteReviewModal from "../DeleteReviewModal/deletereview";
@@ -363,10 +363,10 @@ function SpotDetails () {
   const hasReview = reviews.some((review) => review.userId === user?.id);
 
   return (
-    <div className={styles.spotDetails}>
+    <div className={"spotDetails"}>
       <h1>{spot?.name}</h1>
       <p>{spot?.description}</p>
-      <div className={styles.spotMeta}>
+      <div className={"spotMeta"}>
         <span>{`${spot?.city}, ${spot?.state}, ${spot?.country}`}</span>
         <span>Price per night: {formatPrice(spot?.price)}</span>
         <span>Average Rating: {avgStars || 'New'} ({reviews.length} reviews)</span>
@@ -375,9 +375,9 @@ function SpotDetails () {
       {!isOwner && user && !hasReview && (
         <OpenModalButton buttonText="Write a Review" modalComponent={<ReviewFormModal spotId={spotId} />} />
       )}
-      <ul className={styles.reviews}>
+      <ul className={reviews}>
         {reviews.map((review) => (
-          <li key={review.id} className={styles.review}>
+          <li key={review.id} className={review}>
             <p>{review.user?.name}: {review.content}</p>
             {user?.id === review.userId && (
               <DeleteReviewModal reviewId={review.id} />

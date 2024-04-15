@@ -4,8 +4,8 @@ import * as sessionActions from '../../store/session';
 import OpenModalButton from '../OpenModalButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
-import "./Navigation.css"
-import { useNavigate, Link } from "react-router-dom"
+import "./Navigation.css?inline";
+import { useNavigate, Link } from "react-router-dom";
 import { FaUserCircle } from 'react-icons/fa';
 
 function ProfileButton({ user, buttonClassName }) {

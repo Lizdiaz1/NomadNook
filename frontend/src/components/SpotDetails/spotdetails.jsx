@@ -186,7 +186,7 @@
 // 						className="previewImg"
 // 						src={
 // 							Spot.SpotImages
-// 								? Spot.SpotImages[0]
+//		? Spot.SpotImages[0]
 // 									? Spot.SpotImages[0].url
 // 									: Spot.city
 // 								: Spot.city
@@ -330,7 +330,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getOneSpot } from "../../store/spot";
 import { getReviews as getReviewsForSpot } from "../../store/reviews";
-import "./SpotDetails.css";
+import "./SpotDetails.css?inline";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import ReviewFormModal from "../ReviewFormModal/reviewform";
 import DeleteReviewModal from "../DeleteReviewModal/deletereview";

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import "./DeleteReviewModal.css";
+import "./DeleteReviewModal.css?inline";
 import { useModal } from "../../context/Modal";
 import { deleteReview } from "../../store/reviews";
 

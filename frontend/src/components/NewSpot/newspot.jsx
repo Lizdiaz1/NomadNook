@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { createNewSpot } from "../../store/spots.js";
 import { addImage } from "../../store/images.js";
 import { getSpots } from "../../store/spots.js";
-import "./NewSpot.css"
+import "./NewSpot.css?inline";
 
 function NewSpot () {
     const dispatch = useDispatch();

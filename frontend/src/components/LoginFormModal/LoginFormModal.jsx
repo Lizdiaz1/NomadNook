@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import './LoginForm.css';
+import './LoginForm.css?inline';
 import { useModal } from '../../context/Modal';
 
 function LoginFormModal () {
@@ -14,7 +14,7 @@ function LoginFormModal () {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors({});
-    dispatch(sessionActions.login({ credential, password })) 
+    dispatch(sessionActions.login({ credential, password }))
       .then(() => closeModal())
       .catch(async (res) => {
 

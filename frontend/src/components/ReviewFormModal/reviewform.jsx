@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import "./ReviewForm.css";
+import "./ReviewForm.css?inline";
 import { useModal } from "../../context/Modal";
 import { postReview } from "../../store/reviews";
 import { FaStar } from 'react-icons/fa';

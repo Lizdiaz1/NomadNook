@@ -1,4 +1,4 @@
-import "./UpdateSpot.css";
+import "./UpdateSpot.css?inline";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

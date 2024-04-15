@@ -1,65 +1,99 @@
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-/* Header */
+/* Navigation.css */
 header {
-  background-color: #6b238e;
-  padding: 10px 0;
+  background-color: white;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  height: 60px;
 }
 
-/* Logo container */
-.logo-container {
-  text-decoration: none;
+.logo-container img {
+  height: 40px; /* Adjust size as needed */
 }
 
-/* Logo image */
-#logo {
-  width: 100px;
-  height: auto;
-}
-
-/* Nav links container */
 .nav-links {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
-/* Nav links */
-.nav-links a {
+.nav-links a, .nav-links button {
   text-decoration: none;
-  color: #ffd700;
-  margin-right: 20px;
-}
-
-/* Nav links hover */
-.nav-links a:hover {
-  color: #ffd700;
-}
-
-/* Session buttons */
-.session-buttons button {
-  background-color: #6b238e;
-  color: #ffffff;
+  color: #333;
+  background: none;
   border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
+  padding: 8px 16px;
   cursor: pointer;
-  margin-left: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Session buttons hover */
-.session-buttons button:hover {
-  background-color: #4c165d;
+.nav-links a:hover, .nav-links button:hover {
+  background-color: #f2f2f2;
+}
+
+/* Profile Dropdown Button */
+.profile-dropdown {
+  position: absolute;
+  top: 50px; /* Adjust based on your button's size and header's height */
+  right: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 10px;
+  display: none; /* initially hidden */
+  flex-direction: column;
+}
+
+.profile-dropdown.hidden {
+  display: none;
+}
+
+.profile-dropdown li {
+  padding: 10px;
+  list-style: none;
+  text-align: center;
+}
+
+.manage-spots-button, .logout-button {
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-button {
+  background-color: #dc3545; /* Bootstrap danger red */
+}
+
+.manage-spots-button:hover, .logout-button:hover {
+  opacity: 0.9;
+}
+
+/* Accessibility Enhancements */
+button:focus, a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 105, 135, 0.5); /* Light pink focus ring */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+      flex-direction: column;
+      padding: 10px;
+      gap: 5px;
+  }
 }

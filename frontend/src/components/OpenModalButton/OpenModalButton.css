@@ -1,52 +1,26 @@
-.manage-delete{
-    height: 30px;
-    width: 80px;
-    font-size: 20px;
+/* OpenModalButton.css */
+button {
+    background-color: #FF385C; /* Airbnb's signature red color */
     color: white;
-    background-color: #666666;
-    border: solid black 3px;
-    box-shadow: 5px 5px 5px black;
-}
-.logOut{
-    margin-top: 10px ;
-    border-radius: 70px;
-    height: 50px;
-    width: 100px;
-    font-size: large;
-    color: white;
-    background-color: #666666;
-    border: solid black 3px;
-}
-.post-your-review{
-    height: 30px;
-    font-size: 20px;
-    color: white;
-    background-color: #666666;
-    border: solid black 3px;
-    box-shadow: 5px 5px 5px black;
-}
-.manage-spots-button{
-    text-decoration: none;
-    background: none;
-	color: black;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-    border-top:solid black 2px;
-    border-bottom: solid black 2px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    outline: none;
 }
 
-.profile-button{
-    margin-bottom: 10px;
-    background-color: #FFFFFF;
-    height: 50px;
-    width:100px;
-    border-radius: 40px;
-    cursor: pointer;
+button:hover {
+    background-color: #E94E4F; /* A slightly darker red for hover */
 }
-.profileButtonEle{
-    background-color: red;
-    color:red;
+
+button:focus {
+    box-shadow: 0 0 0 3px rgba(255, 56, 92, 0.5); /* Focus state with a light pink glow */
+}
+
+.button-disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }

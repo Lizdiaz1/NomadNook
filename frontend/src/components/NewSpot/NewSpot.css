@@ -1,77 +1,86 @@
 /* NewSpot.css */
-
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Container */
 .new-spot-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-image: url('/images/cherry_blossoms.png');
-    background-size: cover;
-}
-
-/* Heading */
-.new-spot-container h1 {
-    color: #6b238e;
-    margin-bottom: 20px;
-}
-
-/* Form */
-.newSpotForm {
-    width: 300px;
-    background-color: rgba(107, 35, 142, 0.8);
+    max-width: 600px;
+    margin: 40px auto;
     padding: 20px;
-    border-radius: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Form group */
-.form-group {
+.new-spot-container h1 {
+    text-align: center;
+    color: #FF385C;
     margin-bottom: 20px;
 }
 
-/* Label */
+.form-group {
+    margin-bottom: 15px;
+}
+
 .form-group label {
-    color: #ffd700;
+    display: block;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
-/* Input */
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-/* Error message */
-.error {
-    color: #ff0000;
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+    border-color: #FF385C;
+    box-shadow: 0 0 0 2px rgba(255, 56, 92, 0.25);
+    outline: none;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-group .error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    padding: 5px;
+    border-radius: 4px;
     margin-top: 5px;
-    font-size: 14px;
 }
 
-/* Submit button */
-.form-group button[type="submit"] {
+.errors-container {
+    padding: 10px 20px;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.button {
+    display: block;
     width: 100%;
     padding: 10px;
-    background-color: #ffd700;
-    color: #6b238e;
+    font-size: 16px;
+    color: white;
+    background-color: #FF385C;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.form-group button[type="submit"]:disabled {
-    background-color: #d3d3d3;
+.button:hover {
+    background-color: #E94E4F;
+}
+
+.button:disabled {
+    background-color: #ccc;
     cursor: not-allowed;
 }

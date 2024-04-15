@@ -1,79 +1,74 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Container */
-.spot-details-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-image: url('/images/cherry_blossoms.png');
-    background-size: cover;
-}
-
-/* Heading */
-.spot-details-container h1 {
-    color: #6b238e;
-    margin-bottom: 20px;
-}
-
-/* Spot details */
-.spot-details {
-    width: 80%;
+/* SpotDetails.css */
+.spotDetails {
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
-    background-color: rgba(107, 35, 142, 0.8);
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Spot meta */
-.spot-meta {
-    margin-top: 20px;
-}
-
-/* Spot meta spans */
-.spot-meta span {
-    display: block;
-    margin-bottom: 10px;
-    color: #ffd700;
-}
-
-/* Reviews */
-.reviews {
-    margin-top: 20px;
-}
-
-/* Review */
-.review {
+.spotDetails h1 {
+    color: #FF385C;
     margin-bottom: 10px;
 }
 
-/* Review content */
-.review p {
+.spotDetails p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.spotMeta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.spotMeta span {
+    font-size: 14px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f7f7f7;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+ul li p {
     margin: 0;
-}
-
-/* Error message */
-.error {
-    color: #ff0000;
-    margin-top: 5px;
+    color: #333;
     font-size: 14px;
 }
 
-/* Button */
-.button {
-    padding: 10px 20px;
-    background-color: #ffd700;
-    color: #6b238e;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Styling for user ownership notification */
+.spotDetails > p {
+    font-style: italic;
+    color: #FF385C;
 }
 
-.button:hover {
-    background-color: #cca30e;
+/* Button Styles for Reviews and Modals */
+.OpenModalButton {
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #FF385C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.OpenModalButton:hover {
+    background-color: #E94E4F;
 }

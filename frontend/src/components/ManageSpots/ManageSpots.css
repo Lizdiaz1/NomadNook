@@ -1,121 +1,111 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Outer div container */
+/* ManageSpots.css */
 .outer-div-manage {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url('/images/cherry_blossoms.png');
-    background-size: cover;
     padding: 20px;
+    background-color: #f7f7f7;
 }
 
-/* Manage spots header */
 .manage-spots-header {
-    color: #6b238e;
+    text-align: center;
+    color: #333;
     margin-bottom: 20px;
 }
 
-/* Navigation container */
+/* Navigation and Spot Cards */
 nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    width: 100%;
-    max-width: 1200px;
 }
 
-/* Spot container */
 .all-spots {
-    background-color: rgba(107, 35, 142, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Thumbnail container */
+.all-spots:hover {
+    transform: translateY(-5px);
+}
+
 .thumbnail-container {
     position: relative;
-    overflow: hidden;
-    border-radius: 10px;
+    width: 100%;
+    height: 200px;
 }
 
-/* Thumbnail image */
 .thumbnail-image {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Thumbnail info */
 .thumbnail-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
     padding: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
-/* Secondary text */
 .secondary-text {
-    color: #ffffff;
-}
-
-/* Address text */
-.address-text {
     font-size: 14px;
 }
 
-/* Star text */
+.address-text, .price-text {
+    font-weight: bold;
+}
+
 .star-text {
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #ffbf00; /* Gold color for star ratings */
 }
 
-/* Price text */
-.price-text {
-    font-size: 16px;
-}
-
-/* Update and delete container */
-.update-delete-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-/* Update and delete buttons */
-.update-delete-buttons button {
+.fa-solid.fa-star {
     margin-right: 5px;
-    padding: 5px 10px;
+}
+
+.update-delete-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.update-delete-buttons button {
+    padding: 8px 16px;
+    margin-right: 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
-.update-delete-buttons .update {
-    background-color: #ffd700;
-    color: #6b238e;
+.update {
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
 }
 
-.update-delete-buttons .update:hover {
-    background-color: #ffd700;
+.delete-button {
+    background-color: #dc3545; /* Bootstrap danger red */
+    color: white;
 }
 
-.update-delete-buttons .delete-button {
-    background-color: #6b238e;
-    color: #ffffff;
+.update:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-.update-delete-buttons .delete-button:hover {
-    background-color: #4c165d;
+.delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Responsive Handling */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .all-spots {
+        width: 90%; /* More screen-width on smaller devices */
+    }
 }

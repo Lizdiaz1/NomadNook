@@ -1,0 +1,997 @@
+
+All spots
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Outer container */
+.outer-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('/images/cherry_blossoms.png');
+    background-size: cover;
+}
+
+/* Navigation container */
+nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Spot container */
+.all-spots {
+    background-color: rgba(107, 35, 142, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Thumbnail container */
+.thumbnail-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Thumbnail image */
+.thumbnail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Thumbnail info */
+.thumbnail-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Secondary text */
+.secondary-text {
+    color: #ffffff;
+}
+
+/* Address text */
+.address-text {
+    font-size: 14px;
+}
+
+/* Star text */
+.star-text {
+    font-size: 16px;
+}
+
+/* Price text */
+.price-text {
+    font-size: 16px;
+}
+
+Delete Review
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/cherry_blossoms.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ffd700;
+}
+
+/* Modal container styles */
+.delete-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+}
+
+/* Title styles */
+.delete-modal h1 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+.delete-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Message styles */
+.delete-form h2 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Error message styles */
+.delete-form p {
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+.yes-delete,
+.dont-delete {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.yes-delete {
+    background-color: #ffd700;
+    color: #6b238e;
+}
+
+.yes-delete:hover {
+    background-color: #cca30e;
+}
+
+.dont-delete {
+    background-color: #6b238e;
+    color: #ffd700;
+}
+
+.dont-delete:hover {
+    background-color: #4f1a69;
+}
+
+
+Delete Spot
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/cherry_blossoms.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ffd700;
+}
+
+/* Modal container styles */
+.delete-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+}
+
+/* Title styles */
+.delete-modal h1 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+.delete-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Message styles */
+.delete-form h2 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Error message styles */
+.delete-form p {
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+.yes-delete,
+.dont-delete {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.yes-delete {
+    background-color: #ffd700;
+    color: #6b238e;
+}
+
+.yes-delete:hover {
+    background-color: #cca30e;
+}
+
+.dont-delete {
+    background-color: #6b238e;
+    color: #ffd700;
+}
+
+.dont-delete:hover {
+    background-color: #4f1a69;
+}
+
+
+Login
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('/images/cherry_blossoms.png');
+  background-size: cover;
+}
+
+/* Form */
+.login-form {
+  width: 300px;
+  padding: 20px;
+  background-color: rgba(107, 35, 142, 0.8);
+  border-radius: 10px;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #6b238e;
+  margin-bottom: 20px;
+}
+
+/* Label */
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+/* Input */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Error message */
+p {
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+/* Login button */
+.login {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffd700;
+  color: #6b238e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.login:hover {
+  background-color: #ffd700;
+}
+
+.login:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+/* Demo login button */
+.demo-login {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #6b238e;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.demo-login:hover {
+  background-color: #4c165d;
+}
+
+
+Manage
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Outer div container */
+.outer-div-manage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('/images/cherry_blossoms.png');
+    background-size: cover;
+    padding: 20px;
+}
+
+/* Manage spots header */
+.manage-spots-header {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Navigation container */
+nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Spot container */
+.all-spots {
+    background-color: rgba(107, 35, 142, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Thumbnail container */
+.thumbnail-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Thumbnail image */
+.thumbnail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Thumbnail info */
+.thumbnail-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Secondary text */
+.secondary-text {
+    color: #ffffff;
+}
+
+/* Address text */
+.address-text {
+    font-size: 14px;
+}
+
+/* Star text */
+.star-text {
+    font-size: 16px;
+}
+
+/* Price text */
+.price-text {
+    font-size: 16px;
+}
+
+/* Update and delete container */
+.update-delete-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Update and delete buttons */
+.update-delete-buttons button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-delete-buttons .update {
+    background-color: #ffd700;
+    color: #6b238e;
+}
+
+.update-delete-buttons .update:hover {
+    background-color: #ffd700;
+}
+
+.update-delete-buttons .delete-button {
+    background-color: #6b238e;
+    color: #ffffff;
+}
+
+.update-delete-buttons .delete-button:hover {
+    background-color: #4c165d;
+}
+
+
+Navigation
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Header */
+header {
+  background-color: #6b238e;
+  padding: 10px 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo container */
+.logo-container {
+  text-decoration: none;
+}
+
+/* Logo image */
+#logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Nav links */
+.nav-links a {
+  text-decoration: none;
+  color: #ffd700;
+  margin-right: 20px;
+}
+
+/* Nav links hover */
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+/* Session buttons */
+.session-buttons button {
+  background-color: #6b238e;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Session buttons hover */
+.session-buttons button:hover {
+  background-color: #4c165d;
+}
+
+
+New Spot
+
+/* NewSpot.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Container */
+.new-spot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('/images/cherry_blossoms.png');
+    background-size: cover;
+}
+
+/* Heading */
+.new-spot-container h1 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.newSpotForm {
+    width: 300px;
+    background-color: rgba(107, 35, 142, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label */
+.form-group label {
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
+/* Input */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Error message */
+.error {
+    color: #ff0000;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Submit button */
+.form-group button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffd700;
+    color: #6b238e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button[type="submit"]:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}
+
+
+Open Modal
+
+.manage-delete{
+    height: 30px;
+    width: 80px;
+    font-size: 20px;
+    color: white;
+    background-color: #666666;
+    border: solid black 3px;
+    box-shadow: 5px 5px 5px black;
+}
+.logOut{
+    margin-top: 10px ;
+    border-radius: 70px;
+    height: 50px;
+    width: 100px;
+    font-size: large;
+    color: white;
+    background-color: #666666;
+    border: solid black 3px;
+}
+.post-your-review{
+    height: 30px;
+    font-size: 20px;
+    color: white;
+    background-color: #666666;
+    border: solid black 3px;
+    box-shadow: 5px 5px 5px black;
+}
+.manage-spots-button{
+    text-decoration: none;
+    background: none;
+	color: black;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    border-top:solid black 2px;
+    border-bottom: solid black 2px;
+}
+
+.profile-button{
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    height: 50px;
+    width:100px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.profileButtonEle{
+    background-color: red;
+    color:red;
+}
+
+
+Review
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Form container */
+.review-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #6b238e;
+}
+
+/* Textarea for review */
+.review-textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #6b238e;
+    border-radius: 5px;
+}
+
+.review-textarea textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+/* Star rating */
+.stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stars span {
+    color: #d4af37;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.stars span.filled {
+    color: #ffd700;
+}
+
+/* Review button */
+.review-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6b238e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-button:hover {
+    background-color: #4c165d;
+}
+
+.review-button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}
+
+
+Signup
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Container */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('/images/cherry_blossoms.png');
+  background-size: cover;
+}
+
+/* Heading */
+.signup-container h1 {
+  color: #6b238e;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.signup-form {
+  width: 300px;
+  background-color: rgba(107, 35, 142, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label */
+.form-group label {
+  color: #ffd700;
+  margin-bottom: 5px;
+}
+
+/* Input */
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Error message */
+.error {
+  color: #ff0000;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Submit button */
+.signup-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffd700;
+  color: #6b238e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup-form button[type="submit"]:hover {
+  background-color: #cca30e;
+}
+
+
+Spot Details
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Container */
+.spot-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('/images/cherry_blossoms.png');
+    background-size: cover;
+}
+
+/* Heading */
+.spot-details-container h1 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+/* Spot details */
+.spot-details {
+    width: 80%;
+    padding: 20px;
+    background-color: rgba(107, 35, 142, 0.8);
+    border-radius: 10px;
+}
+
+/* Spot meta */
+.spot-meta {
+    margin-top: 20px;
+}
+
+/* Spot meta spans */
+.spot-meta span {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+/* Reviews */
+.reviews {
+    margin-top: 20px;
+}
+
+/* Review */
+.review {
+    margin-bottom: 10px;
+}
+
+/* Review content */
+.review p {
+    margin: 0;
+}
+
+/* Error message */
+.error {
+    color: #ff0000;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Button */
+.button {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #6b238e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #cca30e;
+}
+
+
+Update Spot
+
+Global styles
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Container */
+.update-spot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('/images/cherry_blossoms.png');
+    background-size: cover;
+}
+
+/* Headings */
+.update-spot-container h1 {
+    color: #6b238e;
+    margin-bottom: 20px;
+}
+
+.update-spot-container h2 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+/* Paragraphs */
+.update-spot-container p {
+    color: #000000;
+}
+
+/* Form */
+.newSpotForm {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(107, 35, 142, 0.8);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Form labels */
+.newSpotForm label {
+    color: #ffd700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Form inputs */
+.newSpotForm input,
+.newSpotForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+}
+
+/* Error messages */
+.newSpotForm .rr {
+    color: #ff0000;
+    margin-top: 5px;
+}
+
+/* Button */
+.newSpotForm .createSpotButton-form {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #6b238e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newSpotForm .createSpotButton-form:hover {
+    background-color: #cca30e;
+}
+
+/* Disabled button */
+.newSpotForm .createSpotButton-form:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}

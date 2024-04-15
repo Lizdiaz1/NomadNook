@@ -4,7 +4,7 @@ import './AllSpots.css';
 import { getSpots } from '../../store/spots.js';
 import { NavLink } from 'react-router-dom';
 
-const AllSpots = () => {
+function AllSpots  () {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -69,6 +69,6 @@ const AllSpots = () => {
             </nav>
         </div>
     );
-};
+}
 
 export default AllSpots;

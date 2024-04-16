@@ -3,6 +3,7 @@ import { thunk } from 'redux-thunk';
 import sessionReducer from './session';
 import spots from './spots';
 import review from './reviews';
+//import images from './images.js'
 
 
 const rootReducer = combineReducers({

@@ -52,7 +52,7 @@ const initialState = {
 };
 
 // Reducer
-const ReviewReducer = (state = initialState, action) => {
+const reviewReducer = (state = initialState, action) => {
     switch (action.type) {
       case GET_REVIEWS: {
         // Creating a new block scope for this case
@@ -82,4 +82,4 @@ const ReviewReducer = (state = initialState, action) => {
   };
 
 
-export default ReviewReducer;
+export default reviewReducer;

@@ -1,41 +1,29 @@
 module.exports = {
+  root: true,
+  env: { browser: true, es2020: true, node: true },
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+  ],
+  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  settings: { react: { version: "18.2" } },
+  plugins: ["react-refresh"],
   overrides: [
     {
-      files: [
-        "src/context/*.jsx",
-        "backend/utils/*.js"  
-      ],
+      files: ["src/context/*.jsx"],
       rules: {
-        'react-refresh/only-export-components': 'off'
-      }
-    }
+        "react-refresh/only-export-components": "off",
+      },
+    },
   ],
-  root: true,
-  env: {
-    browser: true,
-    es2020: true,
-    node: true
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
-  ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
-  },
-  settings: {
-    react: { version: '18.2' }
-  },
-  plugins: ['react-refresh'],
-  ignorePatterns: ['dist', 'node_modules'],  // Make sure backend is not being ignored
+  ignorePatterns: ["dist", "node_modules"],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true }
+    "react-refresh/only-export-components": [
+      "warn",
+      { allowConstantExport: true },
     ],
-    'react/prop-types': 'off'
+    "react/prop-types": "off",
   },
-}
+};

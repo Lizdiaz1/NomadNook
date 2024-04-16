@@ -330,12 +330,12 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getOneSpot } from "../../store/spot";
 import { getReviews as getReviewsForSpot } from "../../store/reviews";
-import "./SpotDetails.css?inline";
+import "./SpotDetails.css";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import ReviewFormModal from "../ReviewFormModal/reviewform";
 import DeleteReviewModal from "../DeleteReviewModal/deletereview";
 //import { NavLink } from "react-router-dom";
-import { calculateAverageRating, formatPrice } from "../../../../backend/utils/numbers";
+import { calculateAverageRating, formatPrice } from "../../utils/numbers";
 
 function SpotDetails () {
   const dispatch = useDispatch();

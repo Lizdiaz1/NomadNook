@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import "./DeleteSpotModal.css?inline";
+import "./DeleteSpotModal.css";
 import { useModal } from "../../context/Modal";
 import { deleteSpot } from "../../store/userSpot";
 

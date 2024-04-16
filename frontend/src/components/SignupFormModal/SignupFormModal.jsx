@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import { useModal } from '../../context/Modal';
-import './SignupForm.css?inline';
+import './SignupForm.css';
 
 function SignupFormModal() {
   const dispatch = useDispatch();

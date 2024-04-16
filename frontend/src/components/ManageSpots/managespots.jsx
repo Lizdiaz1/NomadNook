@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./ManageSpots.css?inline";
+import "./ManageSpots.css";
 import { getUserSpots } from "../../store/userSpot";
 import { NavLink, useNavigate } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";

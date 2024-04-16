@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './AllSpots.css?inline';
+import './AllSpots.css';
 import { getSpots } from '../../store/spots.js';
 import { NavLink } from 'react-router-dom';
 

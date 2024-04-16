@@ -2,7 +2,7 @@ import "./UpdateSpot.css";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getOneSpot } from "../../store/spot";
+import { getOneSpot } from "../../store/spots";
 import { updateExistingSpot } from "../../store/spots";
 
 function UpdateSpot() {

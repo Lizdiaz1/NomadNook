@@ -94,7 +94,7 @@ router.get("/current", requireAuth, async (req, res) => {
 				currSpot.avgStarRating = 0;
 			}
 
-		
+
 
 			delete currSpot.avgRating;
 
@@ -116,7 +116,7 @@ router.get("/current", requireAuth, async (req, res) => {
 					let currImg = imageList[k];
 
 					//delete currImg.spotId;
-					if (currImg.isPreview === true) {
+					if (currImg.preview === true) {
 						currSpot.previewImage = currImg.url;
 					}
 				}

@@ -166,7 +166,7 @@ router.get("/", async (req, res) => {
 		searchQuery.price = { [Op.between]: [minPrice, maxPrice] };
 	}
 
-	
+
 
 	if (page > 0 && size > 0) {
 		query.limit = size;
@@ -182,7 +182,7 @@ router.get("/", async (req, res) => {
 				},
 			{
 				model: SpotImage,
-				attributes: ["url", "isPreview"],
+				attributes: ["url", "preview"],
 			},
 		],
 
@@ -255,7 +255,7 @@ router.get("/", async (req, res) => {
 		for (let j = 0; j < currSpot.SpotImages.length; j++) {
 			let currImg = currSpot.SpotImages[j];
 
-			if (currImg.isPreview === true) {
+			if (currImg.preview === true) {
 				currSpot.previewImage = currImg.url;
 			}
 		}
@@ -345,13 +345,13 @@ router.post("/:spotId/images", requireAuth, async (req, res) => {
 	const newImg = await SpotImage.create({
 		url,
 		spotId,
-		isPreview: preview,
+		preview: preview,
 	});
 
 	return res.json({
 		id: newImg.id,
 		url: newImg.url,
-		preview: newImg.isPreview,
+		preview: newImg.preview,
 	});
 });
 
@@ -370,7 +370,7 @@ router.get("/current", requireAuth, async (req, res) => {
 			},
 			{
 				model: SpotImage,
-				attributes: ["url", "isPreview"],
+				attributes: ["url", "preview"],
 			},
 		],
 	});
@@ -419,7 +419,7 @@ router.get("/current", requireAuth, async (req, res) => {
 		for (let j = 0; j < currSpot.SpotImages.length; j++) {
 			let currImg = currSpot.SpotImages[j];
 
-			if (currImg.isPreview === true) {
+			if (currImg.preview === true) {
 				currSpot.previewImage = currImg.url;
 			}
 		}
@@ -496,7 +496,7 @@ router.get("/:spotId", async (req, res) => {
 		let currImg = imageList[i];
 
 		delete currImg.spotId;
-		if (currImg.isPreview === true) {
+		if (currImg.preview === true) {
 			spotList[0].previewImage = currImg.url;
 		}
 	}
@@ -701,7 +701,7 @@ router.get("/:spotId/reviews", async (req, res) => {
 			let currImg = imageList[i];
 
 			delete currImg.spotId;
-			if (currImg.isPreview === true) {
+			if (currImg.preview === true) {
 				currReview.Spot.previewImage = currImg.url;
 			}
 			delete currReview.Spot;

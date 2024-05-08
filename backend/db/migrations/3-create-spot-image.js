@@ -30,6 +30,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BOOLEAN
       },
+      type: { 
+        allowNull: true,
+        type: Sequelize.STRING,
+      },
       createdAt: {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
         allowNull: false,

@@ -1,0 +1,26 @@
+/* OpenModalButton.css */
+button {
+    background-color: #FF385C; /* Airbnb's signature red color */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+button:hover {
+    background-color: #E94E4F; /* A slightly darker red for hover */
+}
+
+button:focus {
+    box-shadow: 0 0 0 3px rgba(255, 56, 92, 0.5); /* Focus state with a light pink glow */
+}
+
+.button-disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

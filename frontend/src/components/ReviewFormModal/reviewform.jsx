@@ -4,121 +4,78 @@ import { useNavigate } from "react-router-dom";
 import "./ReviewForm.css";
 import { useModal } from "../../context/Modal";
 import { postReview } from "../../store/reviews";
+import { FaStar } from 'react-icons/fa';
+//import { getSpots } from "../../store/spots";
 
 const ReviewFormModal = ({ spotId }) => {
 	const dispatch = useDispatch();
 	const [reviewText, setReviewText] = useState("");
 	const [stars, setStars] = useState(0);
-	const [permaStars, setPermaStars] = useState(0)
+	const [permaStars, setPermaStars] = useState(0);
 	const [errors, setErrors] = useState({});
 	const history = useNavigate();
 	const { closeModal } = useModal();
 
 	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setErrors({});
+
 		const payload = {
 			review: reviewText,
 			stars,
 		};
-		e.preventDefault();
-		setErrors({});
 
 		let createdReview = await dispatch(postReview(spotId, payload)).catch(
 			async (res) => {
 				const data = await res.json();
-
 				if (data && data.message) setErrors({ message: data.message });
-
 				alert(data.message);
 			}
 		);
 
 		if (createdReview) {
 			closeModal();
+			history(`/spots/${spotId}`);
 		}
-		return history(`/spots/${spotId}`);
 	};
 
-	const handleDisabled = (review, stars) => {
-		if (review.length < 10 || stars < 1) {
-			return true;
-		}
-
-		return false;
-	};
-
-	const handleStars = (num) => {
-		return setStars(num);
-	};
-
-	const handlePerma = (num) => {
-		return setPermaStars(num)
-	}
-
-
+	const handleStars = (num) => setStars(num);
+	const handlePerma = (num) => setPermaStars(num);
 
 	return (
 		<>
 			{errors && <p>{errors.message}</p>}
 			<h1>How was your stay?</h1>
 			<form className="review-form" onSubmit={handleSubmit}>
-				<label className="review-textarea">
-					<textarea
-						className="review-textarea"
-						rows="6"
-						placeholder="Leave your review here..."
-						value={reviewText}
-						onChange={(e) => setReviewText(e.target.value)}
-						required
-					/>
-				</label>
-				<label className="stars">
-					<span
-						className={stars >= 1 ? "filled" : "empty"}
-						onMouseOver={() => handleStars(1)}
-						onMouseOut={() => handleStars(permaStars)}
-						onClick={() => handlePerma(1)}
-					>
-						<i className="fa-solid fa-star"></i>
-					</span>
-					<span
-						className={stars >= 2 ? "filled" : "empty"}
-						onMouseOver={() => handleStars(2)}
-						onMouseOut={() => handleStars(permaStars)}
-						onClick={() => handlePerma(2)}
-					>
-						<i className="fa-solid fa-star"></i>
-					</span>
-					<span
-						className={stars >= 3 ? "filled" : "empty"}
-						onMouseOver={() => handleStars(3)}
-						onMouseOut={() => handleStars(permaStars)}
-						onClick={() => handlePerma(3)}
-					>
-						<i className="fa-solid fa-star"></i>
-					</span>
-					<span
-						className={stars >= 4 ? "filled" : "empty"}
-						onMouseOver={() => handleStars(4)}
-						onMouseOut={() => handleStars(permaStars)}
-						onClick={() => handlePerma(4)}
-					>
-						<i className="fa-solid fa-star"></i>
-					</span>
-					<span
-						className={stars === 5 ? "filled" : "empty"}
-						onMouseOver={() => handleStars(5)}
-						onMouseOut={() => handleStars(permaStars)}
-						onClick={() => handlePerma(5)}
-					>
-						<i className="fa-solid fa-star"></i>
-					</span>
-					Stars
-				</label>
-
+				<textarea
+					className="review-textarea"
+					rows="6"
+					placeholder="Leave your review here..."
+					value={reviewText}
+					onChange={(e) => setReviewText(e.target.value)}
+					required
+				/>
+				<div className="stars">
+					{[...Array(5)].map((_, i) => (
+						<span
+							key={i + 1}
+							className={stars > i ? "filled" : "empty"}
+							onMouseEnter={() => handleStars(i + 1)}
+							onMouseLeave={() => handleStars(permaStars)}
+							onClick={() => handlePerma(i + 1)}
+							onKeyDown={(e) => e.key === 'Enter' && handlePerma(i + 1)}
+							tabIndex={0}
+							role="button"
+							aria-label={`Rate ${i + 1} out of 5 stars`}
+						>
+							<FaStar />
+						</span>
+					))}
+				</div>
 				<button
 					className="review-button"
 					type="submit"
-					disabled={handleDisabled(reviewText, stars)}
+					disabled={reviewText.length < 10 || stars < 1}
 				>
 					Submit Your Review
 				</button>

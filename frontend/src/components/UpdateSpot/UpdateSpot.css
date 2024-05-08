@@ -1,89 +1,68 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
+/* UpdateSpot.css */
+.UpdateSpotForm {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Container */
-.update-spot-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-image: url('/images/cherry_blossoms.png');
-    background-size: cover;
-}
-
-/* Headings */
-.update-spot-container h1 {
-    color: #6b238e;
+.UpdateSpotForm h1 {
+    text-align: center;
+    color: #FF385C;
     margin-bottom: 20px;
 }
 
-.update-spot-container h2 {
-    color: #ffd700;
-    margin-bottom: 10px;
-}
-
-/* Paragraphs */
-.update-spot-container p {
-    color: #000000;
-}
-
-/* Form */
-.newSpotForm {
-    width: 80%;
-    max-width: 600px;
-    padding: 20px;
-    background-color: rgba(107, 35, 142, 0.8);
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-/* Form labels */
-.newSpotForm label {
-    color: #ffd700;
+.UpdateSpotForm label {
     display: block;
     margin-bottom: 10px;
 }
 
-/* Form inputs */
-.newSpotForm input,
-.newSpotForm textarea {
+.UpdateSpotForm input[type="text"],
+.UpdateSpotForm input[type="number"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ffd700;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #000000;
-}
-
-/* Error messages */
-.newSpotForm .rr {
-    color: #ff0000;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     margin-top: 5px;
 }
 
-/* Button */
-.newSpotForm .createSpotButton-form {
-    padding: 10px 20px;
-    background-color: #ffd700;
-    color: #6b238e;
+.UpdateSpotForm input[type="text"]:focus,
+.UpdateSpotForm input[type="number"]:focus {
+    border-color: #FF385C;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 56, 92, 0.25);
+}
+
+.UpdateSpotForm .error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    padding: 5px;
+    border: 1px solid #D8000C;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+.UpdateSpotForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FF385C;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
 }
 
-.newSpotForm .createSpotButton-form:hover {
-    background-color: #cca30e;
+.UpdateSpotForm button:hover {
+    background-color: #E94E4F;
 }
 
-/* Disabled button */
-.newSpotForm .createSpotButton-form:disabled {
-    background-color: #cccccc;
-    color: #666666;
+.UpdateSpotForm button:disabled {
+    background-color: #ccc;
     cursor: not-allowed;
 }

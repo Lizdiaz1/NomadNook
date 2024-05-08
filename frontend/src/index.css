@@ -1,88 +1,119 @@
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-image: url('/images/cherry_blossoms.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #ffd700;
+/* index.css */
+body, html {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif; /* Consistent font throughout the app */
+  background-color: #f0f2f5; /* Light grey background similar to modern design trends */
 }
 
-/* Header styles */
-header, .header {
+h1, h2, h3, h4, h5, h6 {
+  color: #333; /* Consistent heading color */
+}
+
+input, button, textarea, select {
+  font-family: inherit; /* Ensures inputs and buttons use the same font */
+  border-radius: 4px; /* Rounded corners for a softer look */
+}
+
+button {
+  cursor: pointer; /* Indicates clickable items */
+  transition: background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+button:hover {
+  opacity: 0.8; /* Slight transparency on hover adds feedback for users */
+}
+
+a {
+  color: #007BFF; /* Default link color */
+  text-decoration: none; /* Removes underline from links */
+}
+
+a:hover {
+  text-decoration: underline; /* Adds underline on hover for clarity */
+}
+
+/* Navigation styles */
+.navigation {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 10px;
-  background-color: #6b238e;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for modals */
 }
 
-/* Logo styles */
-.logo-container img {
-  height: 50px;
-}
-
-/* Authentication buttons container styles */
-.auth-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-/* Authentication button styles */
-.auth-buttons button, .button {
-  padding: 5px 10px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-/* Default button colors */
-.auth-buttons button {
-  background-color: #ffd700;
-  color: #6b238e;
-}
-
-/* Button hover effect */
-.auth-buttons button:hover, .button:hover {
-  background-color: #cca30e;
-}
-
-/* Media query for responsive layout */
-@media (max-width: 768px) {
-  header, .header {
-      flex-direction: column;
-  }
-
-  .logo-container img {
-      margin-bottom: 20px;
-  }
-}
-
-/* Main content styles */
-.main-content {
+.modal-content {
+  background-color: white;
   padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Title styles */
-.title {
-  color: #6b238e;
-  font-size: 24px;
+/* Error message styling */
+.error-message {
+  color: #D8000C;
+  background-color: #FFD2D2;
+  border: 1px solid #D8000C;
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+/* Form styling */
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
   margin-bottom: 10px;
 }
 
-/* Subtitle styles */
-.subtitle {
-  color: #ffd700;
-  font-size: 18px;
-  margin-bottom: 20px;
+.form-control:focus {
+  border-color: #007BFF;
+  outline: none;
 }
 
-/* Footer styles */
-.footer {
-  background-color: #6b238e;
-  color: #ffd700;
-  padding: 20px;
-  text-align: center;
+/* Layout and Flexbox utilities */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Responsive grid for listing items like spots */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.grid-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

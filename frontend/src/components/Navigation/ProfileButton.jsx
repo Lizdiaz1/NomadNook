@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { GiEgyptianProfile } from "react-icons/gi";
-import * as sessionActions from '../../store/session';
-import OpenModalMenuItem from './OpenModalMenuItem';
-import LoginFormPage from '../LoginFormModal/LoginFormModal';
-import SignupFormModal from '../SignupFormModal/SignupFormModal';
+import { useState, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { FaUserCircle } from "react-icons/fa";
+import * as sessionActions from "../../store/session";
+import OpenModalMenuItem from "./OpenModalMenuItem";
+import LoginFormModal from "../LoginFormModal";
+import SignupFormModal from "../SignupFormModal";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -20,12 +20,12 @@ function ProfileButton({ user }) {
     if (!showMenu) return;
 
     const closeMenu = (e) => {
-      if (!ulRef.current.contains(e.target)) {
+      if (ulRef.current && !ulRef.current.contains(e.target)) {
         setShowMenu(false);
       }
     };
 
-    document.addEventListener('click', closeMenu);
+    document.addEventListener("click", closeMenu);
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
@@ -39,18 +39,18 @@ function ProfileButton({ user }) {
   };
 
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
-
   return (
     <>
       <button onClick={toggleMenu}>
-        {}
-        <GiEgyptianProfile />
+        <FaUserCircle />
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
             <li>{user.username}</li>
-            <li>{user.firstName} {user.lastName}</li>
+            <li>
+              {user.firstName} {user.lastName}
+            </li>
             <li>{user.email}</li>
             <li>
               <button onClick={logout}>Log Out</button>
@@ -58,20 +58,16 @@ function ProfileButton({ user }) {
           </>
         ) : (
           <>
-            <li>
-              <OpenModalMenuItem
-                buttonText="Log In"
-                onButtonClick={closeMenu}
-                modalComponent={<LoginFormPage />}
-              />
-            </li>
-            <li>
-              <OpenModalMenuItem
-                buttonText="Sign Up"
-                onButtonClick={closeMenu}
-                modalComponent={<SignupFormModal />}
-              />
-            </li>
+            <OpenModalMenuItem
+              itemText="Log In"
+              onItemClick={closeMenu}
+              modalComponent={<LoginFormModal />}
+            />
+            <OpenModalMenuItem
+              itemText="Sign Up"
+              onItemClick={closeMenu}
+              modalComponent={<SignupFormModal />}
+            />
           </>
         )}
       </ul>

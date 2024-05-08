@@ -93,7 +93,7 @@ router.get("/current", requireAuth, async (req, res) => {
 			let currImg = imageList[i];
 
 			delete currImg.spotId;
-			if (currImg.isPreview === true) {
+			if (currImg.preview === true) {
 				currReview.Spot.previewImage = currImg.url;
 			}
 		}

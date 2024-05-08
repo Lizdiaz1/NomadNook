@@ -1,92 +1,80 @@
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-/* Container */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url('/images/cherry_blossoms.png');
-  background-size: cover;
-}
-
-/* Form */
+/* LoginForm.css */
 .login-form {
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  background-color: rgba(107, 35, 142, 0.8);
-  border-radius: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  max-width: 300px;
+  margin: auto;
 }
 
-/* Heading */
-h1 {
-  text-align: center;
-  color: #6b238e;
+.login-form h1 {
+  color: #FF385C; /* Airbnb's iconic pink-red color */
   margin-bottom: 20px;
 }
 
-/* Label */
-label {
-  display: block;
+.login-form label {
   margin-bottom: 10px;
-  color: #ffd700;
+  width: 100%;
 }
 
-/* Input */
-input[type="text"],
-input[type="password"] {
+.login-form input {
   width: 100%;
   padding: 10px;
-  border: none;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #FF385C;
+  box-shadow: 0 0 0 2px rgba(255, 56, 92, 0.2);
+}
+
+.login-form p {
+  color: #d8000c;
+  background-color: #ffd2d2;
+  padding: 5px;
+  border: 1px solid #d8000c;
   border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-/* Error message */
-p {
-  color: #ff0000;
-  margin-bottom: 10px;
-}
-
-/* Login button */
-.login {
-  display: block;
   width: 100%;
-  padding: 10px;
-  background-color: #ffd700;
-  color: #6b238e;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-form button {
+  padding: 10px 15px;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  margin-top: 15px;
   cursor: pointer;
-  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
-.login:hover {
-  background-color: #ffd700;
+.login-form .login {
+  background-color: #FF385C;
 }
 
-.login:disabled {
-  background-color: #d3d3d3;
+.login-form .login:disabled {
+  background-color: #ccc;
   cursor: not-allowed;
 }
 
-/* Demo login button */
-.demo-login {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #6b238e;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.login-form .login:hover:enabled {
+  background-color: #e60023; /* Slightly darker shade for hover effect */
 }
 
-.demo-login:hover {
-  background-color: #4c165d;
+.login-form .demo-login {
+  background-color: #007bff; /* Bootstrap's primary blue color for demo contrast */
+}
+
+.login-form .demo-login:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
 }

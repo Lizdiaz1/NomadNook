@@ -1,78 +1,85 @@
-
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Outer container */
+/* Outer Navigation Container */
 .outer-nav-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url('/images/cherry_blossoms.png');
-    background-size: cover; 
-}
-
-/* Navigation container */
-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
     padding: 20px;
+    background-color: #f7f7f7;
 }
 
-/* Spot container */
+/* Navigation Styling */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Styling each spot in the navigation */
 .all-spots {
-    background-color: rgba(107, 35, 142, 0.8);
-    padding: 10px;
-    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Thumbnail container */
+.all-spots:hover {
+    transform: translateY(-5px);
+}
+
+/* Thumbnail container for images */
 .thumbnail-container {
     position: relative;
-    overflow: hidden;
-    border-radius: 10px;
+    width: 100%;
+    height: 200px;
 }
 
-/* Thumbnail image */
 .thumbnail-image {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Thumbnail info */
+/* Info section below the thumbnail */
 .thumbnail-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
     padding: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-color: white;
 }
 
-/* Secondary text */
 .secondary-text {
-    color: #ffffff;
-}
-
-/* Address text */
-.address-text {
     font-size: 14px;
+    color: #666;
 }
 
-/* Star text */
+.address-text {
+    font-weight: bold;
+    color: #333;
+}
+
 .star-text {
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #ffbf00; /* Gold color for star rating */
 }
 
-/* Price text */
+.star-text .fa-solid.fa-star {
+    margin-right: 5px;
+}
+
 .price-text {
     font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .all-spots {
+        width: 90%;
+    }
 }

@@ -1,65 +1,7 @@
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #000000;
+.profile-dropdown {
+  position: absolute;
 }
 
-/* Header */
-header {
-  background-color: #6b238e;
-  padding: 10px 0;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-/* Logo container */
-.logo-container {
-  text-decoration: none;
-}
-
-/* Logo image */
-#logo {
-  width: 100px;
-  height: auto;
-}
-
-/* Nav links container */
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
-/* Nav links */
-.nav-links a {
-  text-decoration: none;
-  color: #ffd700;
-  margin-right: 20px;
-}
-
-/* Nav links hover */
-.nav-links a:hover {
-  color: #ffd700;
-}
-
-/* Session buttons */
-.session-buttons button {
-  background-color: #6b238e;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-/* Session buttons hover */
-.session-buttons button:hover {
-  background-color: #4c165d;
+.hidden {
+  display: none;
 }

@@ -1,73 +1,76 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Form container */
+/* ReviewForm.css */
 .review-form {
-    max-width: 400px;
-    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
 }
 
-/* Heading */
-h1 {
+.review-form h1 {
     text-align: center;
-    color: #6b238e;
+    color: #FF385C;
+    margin-bottom: 20px;
 }
 
-/* Textarea for review */
 .review-textarea {
     width: 100%;
-    margin-bottom: 20px;
-    border: 2px solid #6b238e;
-    border-radius: 5px;
-}
-
-.review-textarea textarea {
-    width: 100%;
     padding: 10px;
-    border: none;
-    border-radius: 5px;
-    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Allows vertical resizing, not horizontal */
 }
 
-/* Star rating */
+.review-textarea:focus {
+    border-color: #FF385C;
+    box-shadow: 0 0 0 2px rgba(255, 56, 92, 0.25);
+    outline: none;
+}
+
 .stars {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+    margin: 10px 0;
 }
 
 .stars span {
-    color: #d4af37;
-    font-size: 24px;
     cursor: pointer;
+    color: #ccc; /* Default empty star color */
+    font-size: 24px; /* Star size */
 }
 
-.stars span.filled {
-    color: #ffd700;
+.stars .filled {
+    color: #FFD700; /* Gold color for filled stars */
 }
 
-/* Review button */
 .review-button {
     display: block;
     width: 100%;
-    padding: 10px;
-    background-color: #6b238e;
-    color: #ffffff;
+    padding: 10px 0;
+    margin-top: 20px;
+    background-color: #FF385C;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .review-button:hover {
-    background-color: #4c165d;
+    background-color: #E94E4F; /* Slightly darker red on hover */
 }
 
 .review-button:disabled {
-    background-color: #d3d3d3;
+    background-color: #ccc;
     cursor: not-allowed;
+}
+
+.errors-container {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }

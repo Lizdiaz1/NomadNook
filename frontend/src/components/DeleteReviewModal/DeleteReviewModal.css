@@ -1,77 +1,75 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('/images/cherry_blossoms.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #ffd700;
-}
-
-/* Modal container styles */
-.delete-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 400px;
-}
-
-/* Title styles */
-.delete-modal h1 {
-    color: #6b238e;
-    margin-bottom: 20px;
-}
-
-/* Form styles */
+/* Delete Form Modal Styling */
 .delete-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensure it's above other content */
 }
 
-/* Message styles */
-.delete-form h2 {
-    color: #6b238e;
+.delete-form h3 {
+    color: #FF5A5F;
+    text-align: center;
+}
+
+.delete-form h5 {
+    color: #333;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-/* Error message styles */
-.delete-form p {
-    color: #ff0000;
-    margin-bottom: 10px;
-}
-
-/* Button styles */
-.yes-delete,
-.dont-delete {
-    padding: 10px 20px;
+/* Error message styling */
+.delete-form div {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    padding: 10px;
     margin-top: 10px;
-    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Button styling */
+.delete-form .deletebtn, .delete-form .dontDeleteBtn {
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
 }
 
-.yes-delete {
-    background-color: #ffd700;
-    color: #6b238e;
+.delete-form .deletebtn {
+    background-color: #FF5A5F;
+    color: white;
 }
 
-.yes-delete:hover {
-    background-color: #cca30e;
+.delete-form .dontDeleteBtn {
+    background-color: #ccc;
+    color: #333;
 }
 
-.dont-delete {
-    background-color: #6b238e;
-    color: #ffd700;
+/* Hover effects for buttons */
+.delete-form .deletebtn:hover {
+    background-color: #E94E4F;
 }
 
-.dont-delete:hover {
-    background-color: #4f1a69;
+.delete-form .dontDeleteBtn:hover {
+    background-color: #bbb;
+}
+
+/* Ensure modal is only visible when active */
+.delete-form {
+    display: none; /* You would toggle this with JavaScript or additional classes based on state */
+}
+
+.delete-form.active {
+    display: block; /* When modal state is active */
 }

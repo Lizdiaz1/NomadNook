@@ -110,15 +110,21 @@ const spotsReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD: {
       const allSpots = {};
-      action.list.forEach((spot) => {
-        allSpots[spot.id] = spot;
-      });
-      return {
-        ...state,
-        ...allSpots,
-        list: sortList(action.list),
-      };
+      if (Array.isArray(action.list)) {
+        action.list.map((spot) => {
+          allSpots[spot.id] = spot;
+        });
+        return {
+          ...state,
+          ...allSpots,
+          list: sortList(action.list),
+        };
+      } else {
+        console.error("Action list is not an array:", action.list);
+        return state; 
+      }
     }
+
     case CREATE_SPOT: {
       const newState = {
         ...state,

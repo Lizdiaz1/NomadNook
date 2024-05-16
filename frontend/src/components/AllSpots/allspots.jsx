@@ -9,12 +9,19 @@ function AllSpots  () {
 
     useEffect(() => {
         dispatch(getSpots());
+        console.log('Dispatched getSpots');
     }, [dispatch]);
 
+    // const spots = useSelector((state) => {
+    //     const allSpots = state.spots.list.map((spotId) => state.spots[spotId]);
+    //     console.log('All spots:', allSpots);
+    //     return allSpots;
+    // });
     const spots = useSelector((state) => {
-        // Ensure this maps correctly to your state shape
         return state.spots.list.map((spotId) => state.spots[spotId]);
     });
+
+    console.log('Final spots:', spots);
 
     if (spots.length === 0) {
         return null; // Consider a possible loading indicator or a message

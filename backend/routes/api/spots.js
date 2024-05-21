@@ -1,4 +1,11 @@
 const express = require("express");
+const router = express.Router();
+const { Op } = require("sequelize");
+const bcrypt = require("bcryptjs");
+const { check, query } = require("express-validator");
+const { handleValidationErrors } = require("../../utils/validation");
+const moment = require("moment");
+const currentTime = moment().format("YYYY-MM-DD HH:mm:ss");
 
 const {
 	areIntervalsOverlapping,
@@ -6,12 +13,6 @@ const {
 	isBefore,
 	isEqual,
 } = require("date-fns");
-
-const { Op } = require("sequelize");
-const bcrypt = require("bcryptjs");
-
-const { check } = require("express-validator");
-const { handleValidationErrors } = require("../../utils/validation");
 
 const {
 	setTokenCookie,
@@ -23,12 +24,9 @@ const {
 	SpotImage,
 	Review,
 	User,
-	sequelize,
-	ReviewImage,
+	ReviewImage, //???
 	Booking,
 } = require("../../db/models");
-
-const router = express.Router();
 
 const validateCreate = [
 	check("address")
@@ -355,7 +353,7 @@ router.post("/:spotId/images", requireAuth, async (req, res) => {
 	});
 });
 
-router.get("/current", requireAuth, async (req, res) => {
+router.get("/", requireAuth, async (req, res) => {
 	const ownerId = req.user.id;
 
 	const yourSpots = await Spot.findAll({

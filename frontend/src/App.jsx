@@ -7,8 +7,8 @@ import AllSpots from './components/AllSpots/allspots'; //Landing Page
 import SpotDetails from './components/SpotDetails/spotdetails';
 import UpdateSpot from './components/UpdateSpot/updatespot';
 import NewSpot from './components/NewSpot/newspot';
-import SignupFormModal from './components/SignupFormModal/SignupFormModal';
-import LoginFormModal from './components/LoginFormModal/LoginFormModal';
+//import SignupFormModal from './components/SignupFormModal/SignupFormModal';
+//import LoginFormModal from './components/LoginFormModal/LoginFormModal';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -36,8 +36,8 @@ const router = createBrowserRouter([
       { path: 'spots/:spotId/update', element: <UpdateSpot /> }, // Update Spot
       { path: 'spots/current', element: <userSpots /> }, // Spots owned by current user
       { path: 'spots/new', element: <NewSpot /> }, // Creates a new spot
-      { path: 'session/sign-in', element: <LoginFormModal /> }, // Sign in page may not need
-      { path: 'session/sign-up', element: <SignupFormModal /> }, // Sign up page may not need
+     // { path: 'session/sign-in', element: <LoginFormModal /> }, // Sign in page may not need
+      //{ path: 'session/sign-up', element: <SignupFormModal /> }, // Sign up page may not need
     ],
   },
 ]);

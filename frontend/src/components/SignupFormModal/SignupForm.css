@@ -1,66 +1,68 @@
-/* SignupForm.css */
-.signup-form {
-  max-width: 400px;
-  margin: 20px auto;
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
   padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: modalopen 0.5s;
 }
 
-.signup-form h1 {
-  text-align: center;
-  color: #FF385C;
+@keyframes modalopen {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
-.signup-form input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s;
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.signup-form input:focus {
-  border-color: #FF385C;
-  outline: none;
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.signup-form p {
-  color: #D8000C;
-  background-color: #FFD2D2;
-  padding: 5px;
-  border-radius: 4px;
-  border: 1px solid #D8000C;
-  font-size: 0.9rem;
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
 }
 
-.signup-form button {
-  padding: 12px;
-  background-color: #FF385C;
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #0073e6;
   color: white;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
 }
 
-.signup-form button:hover {
-  background-color: #E94E4F;
+button:disabled {
+  background-color: #cccccc;
 }
 
-.signup-form button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Error message styling */
-.signup-form .error {
-  display: block; /* Ensure errors are displayed correctly */
-  color: #ff0000;
-  margin-top: -10px;
-  margin-bottom: 10px;
+.error {
+  color: red;
+  margin: 10px 0;
 }
